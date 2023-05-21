@@ -43,7 +43,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -68,8 +76,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppConfig\Web.config" />
+    <Content Include="Core\DL\Model_Sytrenx.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model_Sytrenx.Context.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\DL\Model_Sytrenx.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_Sytrenx.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Core\DL\Model_Sytrenx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_Sytrenx.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -80,9 +102,19 @@
     <None Include="AppConfig\Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <EntityDeploy Include="Core\DL\Model_Sytrenx.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model_Sytrenx.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Core\DL\Model_Sytrenx.edmx.diagram">
+      <DependentUpon>Model_Sytrenx.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Web.Config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Core\DL\" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
