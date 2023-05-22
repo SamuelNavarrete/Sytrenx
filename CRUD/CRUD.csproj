@@ -75,47 +75,95 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AppConfig\Web.config" />
-    <Content Include="Core\DL\Model_Sytrenx.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model_Sytrenx.Context.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Core\DL\Model_Sytrenx.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model_Sytrenx.Context.tt</DependentUpon>
+    <Compile Include="Core\PL\Seller\AddSeller.aspx.cs">
+      <DependentUpon>AddSeller.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Core\DL\Model_Sytrenx.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model_Sytrenx.edmx</DependentUpon>
+    <Compile Include="Core\PL\Seller\AddSeller.aspx.designer.cs">
+      <DependentUpon>AddSeller.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente.cs">
+      <DependentUpon>SytrenxDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido.cs">
+      <DependentUpon>SytrenxDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Productos.cs">
+      <DependentUpon>SytrenxDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>SytrenxDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SytrenxDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SytrenxDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SytrenxDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SytrenxDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SytrenxDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SytrenxDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Tipo_Producto.cs">
+      <DependentUpon>SytrenxDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vendedor.cs">
+      <DependentUpon>SytrenxDB.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="AppConfig\packages.config" />
-    <None Include="AppConfig\Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="AppConfig\Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <EntityDeploy Include="Core\DL\Model_Sytrenx.edmx">
+    <EntityDeploy Include="SytrenxDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model_Sytrenx.Designer.cs</LastGenOutput>
+      <LastGenOutput>SytrenxDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Core\DL\Model_Sytrenx.edmx.diagram">
-      <DependentUpon>Model_Sytrenx.edmx</DependentUpon>
-    </None>
-    <None Include="packages.config" />
-    <None Include="Web.Config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Core\PL\Seller\AddSeller.aspx" />
+    <Content Include="Core\Resoruce\Assets\aliquido.jpg" />
+    <Content Include="Core\Resoruce\Assets\amolienda.jpg" />
+    <Content Include="Core\Resoruce\Assets\asolido.jpg" />
+    <Content Include="Core\Resoruce\Assets\doc.jpg" />
+    <Content Include="Core\Resoruce\Assets\entrada.jpg" />
+    <Content Include="Core\Resoruce\Assets\liquido.jpg" />
+    <Content Include="Core\Resoruce\Assets\Logo.jpg" />
+    <Content Include="Core\Resoruce\Assets\molienda.jpg" />
+    <Content Include="Core\Resoruce\Assets\solido.jpg" />
+    <Content Include="Core\Resoruce\Assets\sytrenx.jpg" />
+    <Content Include="Core\Resoruce\Assets\transporte.jpg" />
+    <None Include="packages.config" />
+    <Content Include="SytrenxDB.edmx.diagram">
+      <DependentUpon>SytrenxDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="Web.Config" />
+    <None Include="Web.Debug.Config">
+      <DependentUpon>Web.Config</DependentUpon>
+    </None>
+    <None Include="Web.Release.Config">
+      <DependentUpon>Web.Config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SytrenxDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SytrenxDB.Context.cs</LastGenOutput>
+      <DependentUpon>SytrenxDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="SytrenxDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SytrenxDB.edmx</DependentUpon>
+      <LastGenOutput>SytrenxDB.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
