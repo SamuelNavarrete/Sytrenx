@@ -75,6 +75,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\PL\Client\AddClient.aspx.cs">
+      <DependentUpon>AddClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Core\PL\Client\AddClient.aspx.designer.cs">
+      <DependentUpon>AddClient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Core\PL\Product\AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Core\PL\Product\AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Core\PL\Seller\AddSeller.aspx.cs">
       <DependentUpon>AddSeller.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -127,6 +141,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Core\PL\Client\AddClient.aspx" />
+    <Content Include="Core\PL\Product\AddProduct.aspx" />
     <Content Include="Core\PL\Seller\AddSeller.aspx" />
     <Content Include="Core\Resoruce\Assets\aliquido.jpg" />
     <Content Include="Core\Resoruce\Assets\amolienda.jpg" />
