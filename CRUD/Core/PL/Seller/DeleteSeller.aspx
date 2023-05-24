@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddClient.aspx.cs" Inherits="CRUD.Core.PL.Client.AddClient" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DeleteSeller.aspx.cs" Inherits="CRUD.Core.PL.Seller.DeleteSeller" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Sytrenx</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"/>
@@ -17,8 +17,8 @@
     </style>
 </head>
 <body>
-  <form id="form1" runat="server">
-           <div class="container">
+    <form id="form1" runat="server">
+       <div class="container">
              <div class="row">
       <div class="col-md">
         <nav class="navbar navbar-dark bg-dark fixed-top">
@@ -56,10 +56,9 @@
                     <a class="nav-link" href="#">Cerrar Sesion</a>
                   </li>
                 </ul>
-                <form class="d-flex mt-3" role="search">
+                </div>
                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
                   <button class="btn btn-success" type="submit">Search</button>
-                </form>
               </div>
             </div>
           </div>
@@ -76,37 +75,38 @@
     </div>
     <br/>
 
-            <asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
-            <asp:TextBox ID="txbNombre" runat="server"></asp:TextBox>
-            <br />
-            <br />
-            <asp:Label ID="lblDireccion" runat="server" Text="Direccion del Usuario"></asp:Label>
-            <asp:TextBox ID="txbDirección" runat="server"></asp:TextBox>
-            <br />
-            <br />
-            <asp:Label ID="lblTelefono" runat="server" Text="Telefono"></asp:Label>
-            <asp:TextBox ID="txbTelefono" runat="server"></asp:TextBox>
-            <br />
-            <br />
-            <asp:Label ID="lblCorreo" runat="server" Text="Correo"></asp:Label>
-            <asp:TextBox ID="txbCorreo" runat="server"></asp:TextBox>
-            <br />
-            <br />
-            <asp:Label ID="lblVendedor" runat="server" Text="Id del Vendedor"></asp:Label>
-            <asp:TextBox ID="txbVendedor" runat="server"></asp:TextBox>
-            <br />
-            <br />
-            <asp:Button ID="btnAgregar" runat="server" OnClick="btnAgregar_Click" Text="Agregar" />
-         <br />
-         </div>
-    </form>
-  <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+        <asp:Label ID="lblId" runat="server" Text="Id"></asp:Label>
+        <br />
+        <asp:TextBox ID="txbId" runat="server"></asp:TextBox>
+        <br />
+        <br />
+        <asp:Label ID="lblIdVendedor" runat="server" Text="Id Vendedor"></asp:Label>
+        <br />
+        <asp:TextBox ID="txbIdVendedor" runat="server"></asp:TextBox>
+        <br />
+        <br />
+        <asp:Label ID="lblNombre" runat="server" Text="Nombre Vendedor"></asp:Label>
+        <br />
+        <asp:TextBox ID="txbNombre" runat="server"></asp:TextBox>
+        <br />
+        <br />
+        <asp:Button ID="btnBuscar" runat="server" OnClick="btnBuscar_Click" Text="Buscar" />
+        <br />
+        <br />
+        <asp:GridView ID="GridView1" runat="server">
+        </asp:GridView>
+
+             <br />
+             <br />
+             <br />
+             <asp:Label ID="lblEliminar" runat="server" Text="Eliminar Vendedor"></asp:Label>
+             <br />
+             <asp:TextBox ID="txbEliminar" runat="server"></asp:TextBox>
+             <br />
+             <asp:Button ID="btnEliminar" runat="server" OnClick="btnEliminar_Click" Text="Elimiar" />
+    <br/>
+    <br/>
+    <br/>
     <footer><div class="row" style="background-color: rgba(128, 128, 128, 0.178);">
       <div class="col-md-4">
         

@@ -72,8 +72,8 @@
     <NavigationProperty Name="Productos" Relationship="Self.FK_Productos_Vendedor" FromRole="Vendedor" ToRole="Productos" />
   </EntityType>
   <Association Name="FK_Cliente_Vendedor">
-    <End Role="Vendedor" Type="Self.Vendedor" Multiplicity="1" />
-    <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+    <End Type="Self.Vendedor" Multiplicity="1" Role="Vendedor" />
+    <End Type="Self.Cliente" Multiplicity="*" Role="Cliente" />
     <ReferentialConstraint>
       <Principal Role="Vendedor">
         <PropertyRef Name="Id_Vendedor" />
@@ -108,8 +108,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Pedido_Vendedor">
-    <End Role="Vendedor" Type="Self.Vendedor" Multiplicity="1" />
-    <End Role="Pedido" Type="Self.Pedido" Multiplicity="*" />
+    <End Type="Self.Vendedor" Multiplicity="1" Role="Vendedor" />
+    <End Type="Self.Pedido" Multiplicity="*" Role="Pedido" />
     <ReferentialConstraint>
       <Principal Role="Vendedor">
         <PropertyRef Name="Id_Vendedor" />
@@ -132,8 +132,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Productos_Vendedor">
-    <End Role="Vendedor" Type="Self.Vendedor" Multiplicity="1" />
-    <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
+    <End Type="Self.Vendedor" Multiplicity="1" Role="Vendedor" />
+    <End Type="Self.Productos" Multiplicity="*" Role="Productos" />
     <ReferentialConstraint>
       <Principal Role="Vendedor">
         <PropertyRef Name="Id_Vendedor" />
@@ -151,8 +151,8 @@
     <EntitySet Name="Tipo_Producto" EntityType="Self.Tipo_Producto" />
     <EntitySet Name="Vendedor" EntityType="Self.Vendedor" />
     <AssociationSet Name="FK_Cliente_Vendedor" Association="Self.FK_Cliente_Vendedor">
-      <End Role="Vendedor" EntitySet="Vendedor" />
-      <End Role="Cliente" EntitySet="Cliente" />
+      <End EntitySet="Vendedor" Role="Vendedor" />
+      <End EntitySet="Cliente" Role="Cliente" />
     </AssociationSet>
     <AssociationSet Name="FK_Pedido_Cliente" Association="Self.FK_Pedido_Cliente">
       <End Role="Cliente" EntitySet="Cliente" />
@@ -163,16 +163,16 @@
       <End Role="Pedido" EntitySet="Pedido" />
     </AssociationSet>
     <AssociationSet Name="FK_Pedido_Vendedor" Association="Self.FK_Pedido_Vendedor">
-      <End Role="Vendedor" EntitySet="Vendedor" />
-      <End Role="Pedido" EntitySet="Pedido" />
+      <End EntitySet="Vendedor" Role="Vendedor" />
+      <End EntitySet="Pedido" Role="Pedido" />
     </AssociationSet>
     <AssociationSet Name="FK_Productos_Tipo_Producto" Association="Self.FK_Productos_Tipo_Producto">
       <End Role="Tipo_Producto" EntitySet="Tipo_Producto" />
       <End Role="Productos" EntitySet="Productos" />
     </AssociationSet>
     <AssociationSet Name="FK_Productos_Vendedor" Association="Self.FK_Productos_Vendedor">
-      <End Role="Vendedor" EntitySet="Vendedor" />
-      <End Role="Productos" EntitySet="Productos" />
+      <End EntitySet="Vendedor" Role="Vendedor" />
+      <End EntitySet="Productos" Role="Productos" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

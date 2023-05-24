@@ -99,6 +99,13 @@
     <Compile Include="Cliente.cs">
       <DependentUpon>SytrenxDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Core\PL\Seller\DeleteSeller.aspx.cs">
+      <DependentUpon>DeleteSeller.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Core\PL\Seller\DeleteSeller.aspx.designer.cs">
+      <DependentUpon>DeleteSeller.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pedido.cs">
       <DependentUpon>SytrenxDB.tt</DependentUpon>
     </Compile>
@@ -144,6 +151,7 @@
     <Content Include="Core\PL\Client\AddClient.aspx" />
     <Content Include="Core\PL\Product\AddProduct.aspx" />
     <Content Include="Core\PL\Seller\AddSeller.aspx" />
+    <Content Include="Core\PL\Seller\DeleteSeller.aspx" />
     <Content Include="Core\Resoruce\Assets\aliquido.jpg" />
     <Content Include="Core\Resoruce\Assets\amolienda.jpg" />
     <Content Include="Core\Resoruce\Assets\asolido.jpg" />

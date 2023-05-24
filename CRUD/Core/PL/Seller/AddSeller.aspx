@@ -90,10 +90,20 @@
             <br />
             <asp:Button ID="btnAgregar" runat="server" OnClick="btnAgregar_Click" Text="Agregar" />
          <br />
-    <img alt="Logo" src="C:/Users/eduao/Pictures/Logo.jpg" /><br />
          </div>
     </form>
-
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     <footer><div class="row" style="background-color: rgba(128, 128, 128, 0.178);">
       <div class="col-md-4">
         
@@ -107,13 +117,13 @@
           </ul>
       </div>
       <div class="col-md-2"><br>
-        <center><img src="E:\CUDEC\Especialidad\Usabilidad en la Web\Imagenes\doc.jpg" alt="Logo" width="50" height="50">
+        <center> <img class="img" src="../../Resoruce/Assets/doc.jpg " width="80" height="80" />
       </div>
       <div class="col-md-2"><br>
-        <center><img src="E:\CUDEC\Especialidad\Usabilidad en la Web\Imagenes\doc.jpg" alt="Logo" width="50" height="50">
+        <center> <img class="img" src="../../Resoruce/Assets/doc.jpg " width="80" height="80" />
       </div>
       <div class="col-md-2"><br>
-        <center><img src="E:\CUDEC\Especialidad\Usabilidad en la Web\Imagenes\doc.jpg" alt="Logo" width="50" height="50">
+        <center> <img class="img" src="../../Resoruce/Assets/doc.jpg " width="80" height="80" />
       </div>
     </div></footer>
     </form>
