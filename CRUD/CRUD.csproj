@@ -50,6 +50,9 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -75,12 +78,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\ML\cVendedor.cs" />
     <Compile Include="Core\PL\Client\AddClient.aspx.cs">
       <DependentUpon>AddClient.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Core\PL\Client\AddClient.aspx.designer.cs">
       <DependentUpon>AddClient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Core\PL\Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Core\PL\Product\AddProduct.aspx.cs">
       <DependentUpon>AddProduct.aspx</DependentUpon>
@@ -149,6 +156,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Core\PL\Client\AddClient.aspx" />
+    <Content Include="Core\PL\Global.asax" />
     <Content Include="Core\PL\Product\AddProduct.aspx" />
     <Content Include="Core\PL\Seller\AddSeller.aspx" />
     <Content Include="Core\PL\Seller\DeleteSeller.aspx" />

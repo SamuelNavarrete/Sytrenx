@@ -8,6 +8,9 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
+using CRUD.Core.ML;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace CRUD
 {
@@ -20,6 +23,14 @@ namespace CRUD
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
+            agregarVendedorEnDB();
+            capturarJson();
+            generarJson();
+        }
+
+
+        public void agregarVendedorEnDB()
+        {
             using (SytrenxEntities DBF = new SytrenxEntities())
             {
                 Vendedor vendedor = new Vendedor
@@ -31,6 +42,34 @@ namespace CRUD
                 DBF.Vendedor.Add(vendedor);
                 DBF.SaveChanges();
             }
+        }
+        public void capturarJson()
+        {
+
+            cVendedor oVendedor = new cVendedor()
+            {
+                Nombre = txbNombre.Text,
+                Telefono = txbTelefono.Text,
+                Correo = txbCorreo.Text
+            };
+
+            Session["TxtJSON"] = JsonConvert.SerializeObject(oVendedor);
+
+            if (Session["TxtJSON"].ToString() == string.Empty)
+            {
+                Session["TxtJSON"] = JsonConvert.SerializeObject(oVendedor);
+            }
+            else
+            {
+                Session["TxtJSON"] = Session["TxtJSON"].ToString()
+                    + "," + JsonConvert.SerializeObject(oVendedor);
+            }
+
+        }
+
+        public void generarJson()
+        {
+            File.WriteAllText(@"C:\JsonEduardo\Reporte.json", "[" + Session["TxtJSON"].ToString() + "]");
         }
     }
 }
