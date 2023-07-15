@@ -89,6 +89,7 @@
             <br />
             <br />
             <asp:Button ID="btnAgregar" runat="server" OnClick="btnAgregar_Click" Text="Agregar" />
+         &nbsp;&nbsp;
          <br />
          </div>
     </form>
