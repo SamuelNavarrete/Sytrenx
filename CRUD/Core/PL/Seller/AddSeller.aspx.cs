@@ -43,6 +43,7 @@ namespace CRUD
                 DBF.SaveChanges();
             }
         }
+
         public void capturarJson()
         {
 
@@ -53,8 +54,6 @@ namespace CRUD
                 Correo = txbCorreo.Text
             };
 
-            Session["TxtJSON"] = JsonConvert.SerializeObject(oVendedor);
-
             if (Session["TxtJSON"].ToString() == string.Empty)
             {
                 Session["TxtJSON"] = JsonConvert.SerializeObject(oVendedor);
@@ -64,12 +63,11 @@ namespace CRUD
                 Session["TxtJSON"] = Session["TxtJSON"].ToString()
                     + "," + JsonConvert.SerializeObject(oVendedor);
             }
-
         }
 
         public void generarJson()
         {
-            File.WriteAllText(@"C:\JsonEduardo\Reporte.json", "[" + Session["TxtJSON"].ToString() + "]");
+            File.WriteAllText(@"C:\JsonSytrenx\Reporte.json", "[" + Session["TxtJSON"].ToString() + "]");
         }
     }
 }

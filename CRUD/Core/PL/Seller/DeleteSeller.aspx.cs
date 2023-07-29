@@ -8,6 +8,9 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
+using Newtonsoft.Json;
+using System.IO;
+using System.Data;
 
 namespace CRUD.Core.PL.Seller
 {
@@ -61,6 +64,29 @@ namespace CRUD.Core.PL.Seller
                 catch (Exception ex)
                 {
 
+                }
+            }
+        }
+
+        protected void btnMostrar_Click(object sender, EventArgs e)
+        {
+            LeerJson();
+        }
+
+        public void LeerJson()
+        {
+            using (StreamReader oLeer = File.OpenText(@"C:\JsonSytrenx\Reporte.json"))
+            {
+                string Vjson = oLeer.ReadToEnd();
+                DataTable myArray = (DataTable)JsonConvert.DeserializeObject(Vjson, typeof(DataTable));
+
+                GrdJson.DataSource = myArray;
+                GrdJson.DataBind();
+
+                dynamic myArray2 = JsonConvert.DeserializeObject(Vjson);
+                foreach (var variable2 in myArray2)
+                {
+                    txbNombre2.Text = variable2.Nombre;
                 }
             }
         }

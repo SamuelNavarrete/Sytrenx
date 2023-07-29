@@ -86,9 +86,6 @@
     <Compile Include="Core\PL\Client\AddClient.aspx.designer.cs">
       <DependentUpon>AddClient.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Core\PL\Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
     <Compile Include="Core\PL\Product\AddProduct.aspx.cs">
       <DependentUpon>AddProduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -112,6 +109,9 @@
     </Compile>
     <Compile Include="Core\PL\Seller\DeleteSeller.aspx.designer.cs">
       <DependentUpon>DeleteSeller.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Pedido.cs">
       <DependentUpon>SytrenxDB.tt</DependentUpon>
@@ -156,7 +156,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Core\PL\Client\AddClient.aspx" />
-    <Content Include="Core\PL\Global.asax" />
     <Content Include="Core\PL\Product\AddProduct.aspx" />
     <Content Include="Core\PL\Seller\AddSeller.aspx" />
     <Content Include="Core\PL\Seller\DeleteSeller.aspx" />
@@ -172,6 +171,7 @@
     <Content Include="Core\Resoruce\Assets\sytrenx.jpg" />
     <Content Include="Core\Resoruce\Assets\transporte.jpg" />
     <None Include="packages.config" />
+    <Content Include="Global.asax" />
     <Content Include="SytrenxDB.edmx.diagram">
       <DependentUpon>SytrenxDB.edmx</DependentUpon>
     </Content>
