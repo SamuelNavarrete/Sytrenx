@@ -148,6 +148,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Core\Common\CSS\ImageMoveRight.css" />
     <Content Include="Core\PL\Client\AddClient.aspx" />
     <Content Include="Core\PL\Product\AddProduct.aspx" />
     <Content Include="Core\PL\Seller\AddSeller.aspx" />
