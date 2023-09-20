@@ -74,7 +74,8 @@
 
             <div class="row">
                 <div class="col-md">
-                    <center> <img class="auto-style1" src="../../Resoruce/Assets/Logo.jpg" /></center>
+                    <center>
+                        <img class="auto-style1" src="../../Resoruce/Assets/Logo.jpg" /></center>
                 </div>
             </div>
         </div>
@@ -104,12 +105,22 @@
 
                     <div class="text-center mb-3">
                         <asp:Label ID="lblVendedor" runat="server" Text="Contraseña" Style="width: 300px;"></asp:Label>
-                        <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
+
+                        <asp:RegularExpressionValidator ID="regexPassword" runat="server"
+                            ControlToValidate="txtPassword"
+                            ValidationExpression="^.{8,}$"
+                            ErrorMessage="Password must be at least 8 characters long."
+                            ForeColor="Red"
+                            Display="Dynamic">
+                        </asp:RegularExpressionValidator>
+
                     </div>
 
-                      <div class="text-center mb-3">
-                        <asp:Label ID="Label1" runat="server" Text="Confirtmacion" Style="width: 300px;"></asp:Label>
-                        <asp:TextBox ID="txtConfirmation" runat="server" CssClass="form-control"></asp:TextBox>
+                    <div class="text-center mb-3">
+                        <asp:Label ID="Label1" runat="server" Text="Confirmacion" Style="width: 300px;"></asp:Label>
+                        <asp:TextBox ID="txtConfirmation" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
+
                     </div>
 
                     <div class="text-center">
