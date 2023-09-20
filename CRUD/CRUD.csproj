@@ -176,7 +176,14 @@
     <Content Include="Core\Resoruce\Assets\solido.jpg" />
     <Content Include="Core\Resoruce\Assets\sytrenx.jpg" />
     <Content Include="Core\Resoruce\Assets\transporte.jpg" />
+    <Content Include="libman.json" />
+    <Content Include="lib\jquery\dist\jquery.min.map" />
+    <Content Include="lib\jquery\dist\jquery.slim.min.map" />
     <None Include="packages.config" />
+    <Content Include="lib\jquery\dist\jquery.js" />
+    <Content Include="lib\jquery\dist\jquery.min.js" />
+    <Content Include="lib\jquery\dist\jquery.slim.js" />
+    <Content Include="lib\jquery\dist\jquery.slim.min.js" />
     <Content Include="SytrenxDB.edmx.diagram">
       <DependentUpon>SytrenxDB.edmx</DependentUpon>
     </Content>

@@ -15,8 +15,12 @@
             height: 183px;
         }
     </style>
+
+    <script src="lib/jquery/dist/jquery.js"></script>
+
 </head>
 <body>
+
     <form id="form1" runat="server">
         <div class="container">
             <div class="row">
@@ -57,27 +61,26 @@
                                             <a class="nav-link" href="#">Cerrar Sesion</a>
                                         </li>
                                     </ul>
-                                    <form class="d-flex mt-3" role="search">
-                                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                                        <button class="btn btn-success" type="submit">Search</button>
-                                    </form>
                                 </div>
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                                <button class="btn btn-success" type="submit">Search</button>
                             </div>
                         </div>
-                    </nav>
                 </div>
+                </nav>
             </div>
-            <br />
-            <br />
-            <br />
+        </div>
+        <br />
+        <br />
+        <br />
 
 
-            <div class="row">
-                <div class="col-md">
-                    <center>
-                        <img class="auto-style1" src="../../Resoruce/Assets/Logo.jpg" /></center>
-                </div>
+        <div class="row">
+            <div class="col-md">
+                <center>
+                    <img class="auto-style1" src="../../Resoruce/Assets/Logo.jpg" /></center>
             </div>
+        </div>
         </div>
 
         <div class="container">
@@ -86,51 +89,54 @@
                     <div class="text-center mb-3">
                         <asp:Label ID="lblNombre" runat="server" Text="Nombre" Style="width: 300px;"></asp:Label>
                         <asp:TextBox ID="txbNombre" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="El Nombre no puede quedar vacio" ControlToValidate="txbNombre" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
 
                     <div class="text-center mb-3">
                         <asp:Label ID="lblDireccion" runat="server" Text="Direccion del Usuario" Style="width: 300px;"></asp:Label>
                         <asp:TextBox ID="txbDirección" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="La Direccion no puede quedar vacia" ControlToValidate="txbDirección" ForeColor="Red"></asp:RequiredFieldValidator>
+
                     </div>
 
                     <div class="text-center mb-3">
                         <asp:Label ID="lblTelefono" runat="server" Text="Telefono" Style="width: 300px;"></asp:Label>
                         <asp:TextBox ID="txbTelefono" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="El Telefono no puede quedar vacio" ControlToValidate="txbTelefono" ForeColor="Red"></asp:RequiredFieldValidator>
+
                     </div>
 
                     <div class="text-center mb-3">
                         <asp:Label ID="lblCorreo" runat="server" Text="Correo" Style="width: 300px;"></asp:Label>
                         <asp:TextBox ID="txbCorreo" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="El Correo no puede quedar vacio" ControlToValidate="txbCorreo" ForeColor="Red"></asp:RequiredFieldValidator>
+
                     </div>
 
                     <div class="text-center mb-3">
                         <asp:Label ID="lblVendedor" runat="server" Text="Contraseña" Style="width: 300px;"></asp:Label>
                         <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
-
-                        <asp:RegularExpressionValidator ID="regexPassword" runat="server"
-                            ControlToValidate="txtPassword"
-                            ValidationExpression="^.{8,}$"
-                            ErrorMessage="Password must be at least 8 characters long."
-                            ForeColor="Red"
-                            Display="Dynamic">
-                        </asp:RegularExpressionValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="La Contraseña no puede quedar vacia" ControlToValidate="txtPassword" ForeColor="Red"></asp:RequiredFieldValidator>
 
                     </div>
 
                     <div class="text-center mb-3">
                         <asp:Label ID="Label1" runat="server" Text="Confirmacion" Style="width: 300px;"></asp:Label>
                         <asp:TextBox ID="txtConfirmation" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="La Confirmacion no puede quedar vacia" ControlToValidate="txtConfirmation" ForeColor="Red"></asp:RequiredFieldValidator>
 
                     </div>
 
                     <div class="text-center">
-                        <asp:Button ID="btnAgregar" runat="server" OnClick="btnAgregar_Click" Text="Agregar" CssClass="btn btn-primary" Style="width: 300px;" />
+                        <asp:Button ID="btnAgregar" runat="server" Text="Registar" />
                     </div>
                 </div>
             </div>
         </div>
 
-        </div>
+    </form>
+
+    </div>
     </form>
     <br />
     <br />

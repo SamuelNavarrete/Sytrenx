@@ -23,7 +23,8 @@ namespace CRUD.Core.PL.Client
                     Nombre_Cliente = txbNombre.Text,
                     Direccion_Cliente = txbDirección.Text,
                     Telefono_Cliente = txbTelefono.Text,
-                    Correo_Cliente = txbCorreo.Text
+                    Correo_Cliente = txbCorreo.Text,
+                    Contraseña_Cliente = txtPassword.Text
                     //Id_Vendedor = int.Parse(txbVendedor.Text)
 
                 };

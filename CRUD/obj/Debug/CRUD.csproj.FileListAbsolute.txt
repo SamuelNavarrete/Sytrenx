@@ -308,8 +308,6 @@ C:\Users\eduao\OneDrive\Documentos\Sytrenx\Sytrenx\CRUD\obj\Debug\CRUD.csproj.Co
 C:\Users\eduao\OneDrive\Documentos\Sytrenx\Sytrenx\CRUD\obj\Debug\CRUD.csproj.CopyComplete
 C:\Users\eduao\OneDrive\Documentos\Sytrenx\Sytrenx\CRUD\obj\Debug\CRUD.dll
 C:\Users\eduao\OneDrive\Documentos\Sytrenx\Sytrenx\CRUD\obj\Debug\CRUD.pdb
-C:\Users\samic_000\OneDrive\Escritorio\Proyecto\Sytrenx\CRUD\obj\Debug\CRUD.csproj.AssemblyReference.cache
-C:\Users\samic_000\OneDrive\Escritorio\Proyecto\Sytrenx\CRUD\obj\Debug\CRUD.csproj.CoreCompileInputs.cache
 C:\Users\samic_000\OneDrive\Escritorio\Proyecto\Sytrenx\CRUD\bin\CRUD.dll.config
 C:\Users\samic_000\OneDrive\Escritorio\Proyecto\Sytrenx\CRUD\bin\CRUD.dll
 C:\Users\samic_000\OneDrive\Escritorio\Proyecto\Sytrenx\CRUD\bin\CRUD.pdb
@@ -368,6 +366,8 @@ C:\Users\samic_000\OneDrive\Escritorio\Proyecto\Sytrenx\CRUD\bin\Microsoft.CodeD
 C:\Users\samic_000\OneDrive\Escritorio\Proyecto\Sytrenx\CRUD\bin\EntityFramework.xml
 C:\Users\samic_000\OneDrive\Escritorio\Proyecto\Sytrenx\CRUD\bin\EntityFramework.SqlServer.xml
 C:\Users\samic_000\OneDrive\Escritorio\Proyecto\Sytrenx\CRUD\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\samic_000\OneDrive\Escritorio\Proyecto\Sytrenx\CRUD\obj\Debug\CRUD.csproj.AssemblyReference.cache
+C:\Users\samic_000\OneDrive\Escritorio\Proyecto\Sytrenx\CRUD\obj\Debug\CRUD.csproj.CoreCompileInputs.cache
 C:\Users\samic_000\OneDrive\Escritorio\Proyecto\Sytrenx\CRUD\obj\Debug\CRUD.csproj.CopyComplete
 C:\Users\samic_000\OneDrive\Escritorio\Proyecto\Sytrenx\CRUD\obj\Debug\CRUD.dll
 C:\Users\samic_000\OneDrive\Escritorio\Proyecto\Sytrenx\CRUD\obj\Debug\CRUD.pdb
