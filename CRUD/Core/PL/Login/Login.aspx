@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <form id="form1" runat="server">
     <div class="container">
         <div class="row">
             <div class="col-md">
@@ -50,11 +51,9 @@
                                         <a class="nav-link" href="#">Cerrar Sesion</a>
                                     </li>
                                 </ul>
-                                <form class="d-flex mt-3" role="search">
                                     <input class="form-control me-2" type="search" placeholder="Search"
                                         aria-label="Search">
                                     <button class="btn btn-success" type="submit">BUSCAR</button>
-                                </form>
                             </div>
                         </div>
                     </div>
@@ -74,7 +73,6 @@
         <br>
         <br>
         <center>
-            <form action="/my-handling-form-page" method="post">
                 <label for="name">CORREO ELECTRONICO</label>
                 <br>
                 <br>
@@ -87,7 +85,7 @@
                 <input type="email" id="mail" name="user_mail">
                 <br>
                 <br>
-                <button type="submit">ENTRAR</button>
+                <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" Text="Entrar" />
                 <br>
                 <br>
                 <input type="checkbox" class="form-check-input" id="dropdownCheck">
@@ -97,8 +95,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Registrarse</a>
                 <a class="dropdown-item" href="#">¿Olvido su contraseña?</a>
-            </form>
-        </center>
+            </center>
         <br>
         <br>
         <div class="row" style="background-color: rgba(128, 128, 128, 0.178);">
@@ -143,6 +140,7 @@
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous">
     </script>
+    </form>
 </body>
 
 </html>

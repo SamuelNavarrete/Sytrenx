@@ -13,5 +13,10 @@ namespace CRUD.Core.PL.Login
         {
 
         }
+
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Core/PL/Product/AllProducts.aspx");
+        }
     }
 }
