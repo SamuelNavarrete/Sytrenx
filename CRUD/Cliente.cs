@@ -25,9 +25,8 @@ namespace CRUD
         public string Direccion_Cliente { get; set; }
         public string Telefono_Cliente { get; set; }
         public string Correo_Cliente { get; set; }
-        public int Id_Vendedor { get; set; }
+        public string Contraseña_Cliente { get; set; }
     
-        public virtual Vendedor Vendedor { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pedido> Pedido { get; set; }
     }

@@ -25,11 +25,10 @@ namespace CRUD
         public string Nombre_Producto { get; set; }
         public string Clave_Producto { get; set; }
         public int Existencia_Producto { get; set; }
-        public int Id_Vendedor { get; set; }
+        public int Tipo_Producto1 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pedido> Pedido { get; set; }
         public virtual Tipo_Producto Tipo_Producto { get; set; }
-        public virtual Vendedor Vendedor { get; set; }
     }
 }

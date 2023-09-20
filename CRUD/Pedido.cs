@@ -18,8 +18,9 @@ namespace CRUD
         public int Id_cliente { get; set; }
         public System.DateTime Fecha_Pedido { get; set; }
         public int Id_Producto { get; set; }
-        public int Cantidad_Producto { get; set; }
         public int Id_Vendedor { get; set; }
+        public int Cantidad_Producto1 { get; set; }
+        public string TotalPrecio_Producto { get; set; }
     
         public virtual Cliente Cliente { get; set; }
         public virtual Productos Productos { get; set; }

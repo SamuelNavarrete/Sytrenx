@@ -28,7 +28,6 @@ namespace CRUD
         public virtual DbSet<Cliente> Cliente { get; set; }
         public virtual DbSet<Pedido> Pedido { get; set; }
         public virtual DbSet<Productos> Productos { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Tipo_Producto> Tipo_Producto { get; set; }
         public virtual DbSet<Vendedor> Vendedor { get; set; }
     }

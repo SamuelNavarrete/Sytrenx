@@ -7,9 +7,9 @@
     <Property Name="Id_Cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nombre_Cliente" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="Direccion_Cliente" Type="varchar" MaxLength="255" Nullable="false" />
-    <Property Name="Telefono_Cliente" Type="varchar" MaxLength="50" />
+    <Property Name="Telefono_Cliente" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="Correo_Cliente" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Id_Vendedor" Type="int" Nullable="false" />
+    <Property Name="Contraseña_Cliente" Type="varchar" MaxLength="16" Nullable="false" />
   </EntityType>
   <EntityType Name="Pedido">
     <Key>
@@ -19,8 +19,9 @@
     <Property Name="Id_cliente" Type="int" Nullable="false" />
     <Property Name="Fecha_Pedido" Type="datetime" Nullable="false" />
     <Property Name="Id_Producto" Type="int" Nullable="false" />
-    <Property Name="Cantidad_Producto" Type="int" Nullable="false" />
     <Property Name="Id_Vendedor" Type="int" Nullable="false" />
+    <Property Name="Cantidad_Producto" Type="int" Nullable="false" />
+    <Property Name="TotalPrecio_Producto" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Productos">
     <Key>
@@ -30,18 +31,8 @@
     <Property Name="Id_Tipo" Type="int" Nullable="false" />
     <Property Name="Nombre_Producto" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="Clave_Producto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Tipo_Producto" Type="int" Nullable="false" />
     <Property Name="Existencia_Producto" Type="int" Nullable="false" />
-    <Property Name="Id_Vendedor" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="Tipo_Producto">
     <Key>
@@ -56,111 +47,14 @@
     </Key>
     <Property Name="Id_Vendedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nombre_Vendedor" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="Telefono_Vendedor" Type="varchar" MaxLength="50" />
-    <Property Name="Correo_Vendedor" Type="varchar" MaxLength="50" />
+    <Property Name="Telefono_Vendedor" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Correo_Vendedor" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
-  <Association Name="FK_Cliente_Vendedor">
-    <End Role="Vendedor" Type="Self.Vendedor" Multiplicity="1" />
-    <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Vendedor">
-        <PropertyRef Name="Id_Vendedor" />
-      </Principal>
-      <Dependent Role="Cliente">
-        <PropertyRef Name="Id_Vendedor" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Pedido_Cliente">
-    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
-    <End Role="Pedido" Type="Self.Pedido" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Cliente">
-        <PropertyRef Name="Id_Cliente" />
-      </Principal>
-      <Dependent Role="Pedido">
-        <PropertyRef Name="Id_cliente" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Pedido_Productos">
-    <End Role="Productos" Type="Self.Productos" Multiplicity="1" />
-    <End Role="Pedido" Type="Self.Pedido" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Productos">
-        <PropertyRef Name="Id_Producto" />
-      </Principal>
-      <Dependent Role="Pedido">
-        <PropertyRef Name="Id_Producto" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Pedido_Vendedor">
-    <End Role="Vendedor" Type="Self.Vendedor" Multiplicity="1" />
-    <End Role="Pedido" Type="Self.Pedido" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Vendedor">
-        <PropertyRef Name="Id_Vendedor" />
-      </Principal>
-      <Dependent Role="Pedido">
-        <PropertyRef Name="Id_Vendedor" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Productos_Tipo_Producto">
-    <End Role="Tipo_Producto" Type="Self.Tipo_Producto" Multiplicity="1" />
-    <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Tipo_Producto">
-        <PropertyRef Name="Id_Tipo" />
-      </Principal>
-      <Dependent Role="Productos">
-        <PropertyRef Name="Id_Tipo" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Productos_Vendedor">
-    <End Role="Vendedor" Type="Self.Vendedor" Multiplicity="1" />
-    <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Vendedor">
-        <PropertyRef Name="Id_Vendedor" />
-      </Principal>
-      <Dependent Role="Productos">
-        <PropertyRef Name="Id_Vendedor" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="SytrenxModelStoreContainer">
     <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Pedido" EntityType="Self.Pedido" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Productos" EntityType="Self.Productos" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tipo_Producto" EntityType="Self.Tipo_Producto" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Vendedor" EntityType="Self.Vendedor" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_Cliente_Vendedor" Association="Self.FK_Cliente_Vendedor">
-      <End Role="Vendedor" EntitySet="Vendedor" />
-      <End Role="Cliente" EntitySet="Cliente" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Pedido_Cliente" Association="Self.FK_Pedido_Cliente">
-      <End Role="Cliente" EntitySet="Cliente" />
-      <End Role="Pedido" EntitySet="Pedido" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Pedido_Productos" Association="Self.FK_Pedido_Productos">
-      <End Role="Productos" EntitySet="Productos" />
-      <End Role="Pedido" EntitySet="Pedido" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Pedido_Vendedor" Association="Self.FK_Pedido_Vendedor">
-      <End Role="Vendedor" EntitySet="Vendedor" />
-      <End Role="Pedido" EntitySet="Pedido" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Productos_Tipo_Producto" Association="Self.FK_Productos_Tipo_Producto">
-      <End Role="Tipo_Producto" EntitySet="Tipo_Producto" />
-      <End Role="Productos" EntitySet="Productos" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Productos_Vendedor" Association="Self.FK_Productos_Vendedor">
-      <End Role="Vendedor" EntitySet="Vendedor" />
-      <End Role="Productos" EntitySet="Productos" />
-    </AssociationSet>
   </EntityContainer>
 </Schema>

@@ -25,8 +25,8 @@ namespace CRUD.Core.PL.Product
                     Id_Tipo = int.Parse(txbTipo.Text),
                     Nombre_Producto = txbNombrep.Text,
                     Clave_Producto = txbClavep.Text,
-                    Existencia_Producto = int.Parse(txbExistenciap.Text),
-                    Id_Vendedor = int.Parse(txbVendedor.Text)
+                    Existencia_Producto = int.Parse(txbExistenciap.Text)
+                    //Id_Vendedor = int.Parse(txbVendedor.Text)
 
                 };
                 DBF.Productos.Add(productos);

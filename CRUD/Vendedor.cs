@@ -17,9 +17,7 @@ namespace CRUD
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Vendedor()
         {
-            this.Cliente = new HashSet<Cliente>();
             this.Pedido = new HashSet<Pedido>();
-            this.Productos = new HashSet<Productos>();
         }
     
         public int Id_Vendedor { get; set; }
@@ -28,10 +26,6 @@ namespace CRUD
         public string Correo_Vendedor { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cliente> Cliente { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pedido> Pedido { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Productos> Productos { get; set; }
     }
 }

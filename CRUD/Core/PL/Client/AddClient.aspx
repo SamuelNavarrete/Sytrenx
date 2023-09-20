@@ -103,8 +103,13 @@
                     </div>
 
                     <div class="text-center mb-3">
-                        <asp:Label ID="lblVendedor" runat="server" Text="Id del Vendedor" Style="width: 300px;"></asp:Label>
-                        <asp:TextBox ID="txbVendedor" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:Label ID="lblVendedor" runat="server" Text="Contraseña" Style="width: 300px;"></asp:Label>
+                        <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+
+                      <div class="text-center mb-3">
+                        <asp:Label ID="Label1" runat="server" Text="Confirtmacion" Style="width: 300px;"></asp:Label>
+                        <asp:TextBox ID="txtConfirmation" runat="server" CssClass="form-control"></asp:TextBox>
                     </div>
 
                     <div class="text-center">
