@@ -94,26 +94,69 @@
                     <div class="text-center mb-3">
                         <asp:Label ID="lblNombre" runat="server" Text="Nombre" Style="width: 300px;"></asp:Label>
                         <asp:TextBox ID="txbNombre" runat="server" CssClass="form-control"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="El Nombre no puede quedar vacio" ControlToValidate="txbNombre" ForeColor="Red"></asp:RequiredFieldValidator>
+
+                        <asp:RequiredFieldValidator
+                            ID="rfvNombre"
+                            runat="server"
+                            ControlToValidate="txbCorreo"
+                            ErrorMessage="El Nombre es requerido."
+                            ForeColor="Red"
+                            Display="Dynamic"
+                            EnableClientScript="true"
+                            ValidationGroup="registro">
+                        </asp:RequiredFieldValidator>
+
                     </div>
 
                     <div class="text-center mb-3">
                         <asp:Label ID="lblDireccion" runat="server" Text="Direccion del Usuario" Style="width: 300px;"></asp:Label>
                         <asp:TextBox ID="txbDirección" runat="server" CssClass="form-control"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="La Direccion no puede quedar vacia" ControlToValidate="txbDirección" ForeColor="Red"></asp:RequiredFieldValidator>
+
+                        <asp:RequiredFieldValidator
+                            ID="rfvDireccion"
+                            runat="server"
+                            ControlToValidate="txbCorreo"
+                            ErrorMessage="El Direccion es requerida."
+                            ForeColor="Red"
+                            Display="Dynamic"
+                            EnableClientScript="true"
+                            ValidationGroup="registro">
+                        </asp:RequiredFieldValidator>
 
                     </div>
 
                     <div class="text-center mb-3">
                         <asp:Label ID="lblTelefono" runat="server" Text="Telefono" Style="width: 300px;"></asp:Label>
                         <asp:TextBox ID="txbTelefono" runat="server" CssClass="form-control"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="El Telefono no puede quedar vacio" ControlToValidate="txbTelefono" ForeColor="Red"></asp:RequiredFieldValidator>
+
+                        <asp:RequiredFieldValidator
+                            ID="rfvTelfono"
+                            runat="server"
+                            ControlToValidate="txbCorreo"
+                            ErrorMessage="El Telefono es requerido."
+                            ForeColor="Red"
+                            Display="Dynamic"
+                            EnableClientScript="true"
+                            ValidationGroup="registro">
+                        </asp:RequiredFieldValidator>
 
                     </div>
 
                     <div class="text-center mb-3">
                         <asp:Label ID="lblCorreo" runat="server" Text="Correo" Style="width: 300px;"></asp:Label>
                         <asp:TextBox ID="txbCorreo" runat="server" CssClass="form-control"></asp:TextBox>
+
+                        <asp:RequiredFieldValidator
+                            ID="rfvEmail"
+                            runat="server"
+                            ControlToValidate="txbCorreo"
+                            ErrorMessage="El Correo es requerido."
+                            ForeColor="Red"
+                            Display="Dynamic"
+                            EnableClientScript="true"
+                            ValidationGroup="registro">
+                        </asp:RequiredFieldValidator>
+
                         <asp:RegularExpressionValidator
                             ID="regexEmailValidator"
                             runat="server"
@@ -121,7 +164,11 @@
                             ErrorMessage="El correo electrónico no es válido."
                             ValidationExpression="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
                             ForeColor="Red"
-                            Display="Dynamic"></asp:RegularExpressionValidator>
+                            Display="Dynamic"
+                            EnableClientScript="true"
+                            ValidationGroup="registro">
+                        </asp:RegularExpressionValidator>
+
                     </div>
 
                     <div class="text-center mb-3">
@@ -136,7 +183,8 @@
                             ErrorMessage="La contraseña es requerida."
                             ForeColor="Red"
                             Display="Dynamic"
-                            EnableClientScript="false">
+                            EnableClientScript="true"
+                            ValidationGroup="registro">
                         </asp:RequiredFieldValidator>
 
                         <!-- Agrega un RegularExpressionValidator para verificar la complejidad de la contraseña -->
@@ -147,7 +195,8 @@
                             ErrorMessage="La contraseña debe tener al menos 8 caracteres, incluyendo al menos 1 mayúscula, 1 número y 1 carácter especial."
                             ForeColor="Red"
                             Display="Dynamic"
-                            ValidationExpression="^(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,}$">
+                            ValidationExpression="^(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,}$"
+                            ValidationGroup="registro">
                         </asp:RegularExpressionValidator>
                     </div>
 
@@ -162,7 +211,8 @@
                             ControlToValidate="txtConfirmation"
                             ErrorMessage="La confirmación de la contraseña es requerida."
                             ForeColor="Red"
-                            Display="Dynamic"></asp:RequiredFieldValidator>
+                            Display="Dynamic"
+                            ValidationGroup="registro"></asp:RequiredFieldValidator>
 
                         <!-- Agrega un CompareValidator para comparar la contraseña y su confirmación -->
                         <asp:CompareValidator
@@ -174,12 +224,13 @@
                             Type="String"
                             ErrorMessage="Las contraseñas no coinciden."
                             ForeColor="Red"
-                            Display="Dynamic"></asp:CompareValidator>
+                            Display="Dynamic"
+                            ValidationGroup="registro"></asp:CompareValidator>
                     </div>
 
 
                     <div class="text-center">
-                        <asp:Button ID="btnAgregar" runat="server" Text="Registar" OnClick="btnAgregar_Click" />
+                        <asp:Button ID="btnAgregar" runat="server" Text="Registar" OnClick="btnAgregar_Click" ValidationGroup="registro" />
                     </div>
                 </div>
             </div>

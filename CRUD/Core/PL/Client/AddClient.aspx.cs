@@ -14,26 +14,37 @@ namespace CRUD.Core.PL.Client
 
         }
 
-
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Botón clickeado');", true);
-
-            using (SytrenxEntities DBF = new SytrenxEntities())
+            if (Page.IsValid) // Verifica que todas las validaciones en la página sean válidas.
             {
-                Cliente cliente = new Cliente
+                // Verifica si los campos requeridos están llenos antes de guardar en la base de datos.
+                if (!string.IsNullOrEmpty(txbNombre.Text) && !string.IsNullOrEmpty(txbDirección.Text) && !string.IsNullOrEmpty(txbTelefono.Text) && !string.IsNullOrEmpty(txbCorreo.Text) && !string.IsNullOrEmpty(txtPassword.Text))
                 {
-                    Nombre_Cliente = txbNombre.Text,
-                    Direccion_Cliente = txbDirección.Text,
-                    Telefono_Cliente = txbTelefono.Text,
-                    Correo_Cliente = txbCorreo.Text,
-                    Contraseña_Cliente = txtPassword.Text
-                    //Id_Vendedor = int.Parse(txbVendedor.Text)
+                    using (SytrenxEntities DBF = new SytrenxEntities())
+                    {
+                        Cliente cliente = new Cliente
+                        {
+                            Nombre_Cliente = txbNombre.Text,
+                            Direccion_Cliente = txbDirección.Text,
+                            Telefono_Cliente = txbTelefono.Text,
+                            Correo_Cliente = txbCorreo.Text,
+                            Contraseña_Cliente = txtPassword.Text
+                        };
 
-                };
-                DBF.Cliente.Add(cliente);
-                DBF.SaveChanges();
+                        DBF.Cliente.Add(cliente);
+                        DBF.SaveChanges();
+                    }
+                    // Redirige o muestra un mensaje de éxito aquí.
+                }
+                else
+                {
+                    // Alguno de los campos requeridos está vacío, muestra un mensaje de error o realiza alguna acción apropiada.
+                    // Por ejemplo, puedes mostrar un mensaje de error o mostrar una alerta al usuario.
+                    // Puedes usar JavaScript para mostrar una alerta o un control de ASP.NET para mostrar el mensaje.
+                }
             }
         }
+
     }
 }

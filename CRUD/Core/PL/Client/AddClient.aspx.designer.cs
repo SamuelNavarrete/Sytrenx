@@ -42,13 +42,13 @@ namespace CRUD.Core.PL.Client
         protected global::System.Web.UI.WebControls.TextBox txbNombre;
 
         /// <summary>
-        /// Control RequiredFieldValidator1.
+        /// Control rfvNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre;
 
         /// <summary>
         /// Control lblDireccion.
@@ -69,13 +69,13 @@ namespace CRUD.Core.PL.Client
         protected global::System.Web.UI.WebControls.TextBox txbDirección;
 
         /// <summary>
-        /// Control RequiredFieldValidator2.
+        /// Control rfvDireccion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDireccion;
 
         /// <summary>
         /// Control lblTelefono.
@@ -96,13 +96,13 @@ namespace CRUD.Core.PL.Client
         protected global::System.Web.UI.WebControls.TextBox txbTelefono;
 
         /// <summary>
-        /// Control RequiredFieldValidator3.
+        /// Control rfvTelfono.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTelfono;
 
         /// <summary>
         /// Control lblCorreo.
@@ -121,6 +121,15 @@ namespace CRUD.Core.PL.Client
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txbCorreo;
+
+        /// <summary>
+        /// Control rfvEmail.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmail;
 
         /// <summary>
         /// Control regexEmailValidator.
