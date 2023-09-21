@@ -23,6 +23,24 @@
 
     <script src="lib/jquery/dist/jquery.js"></script>
 
+    <script type="text/javascript">
+        function realizarAccionPersonalizada() {
+            // Aquí puedes agregar la acción personalizada que desees al hacer clic en el botón "Hacer algo"
+            alert('Se realizó una acción personalizada.');
+            // Cierra la alerta modal
+            $('#miAlertaModal').modal('hide');
+        }
+    </script>
+
+    <script>
+        function irAInicioDeSesion() {
+            // Cierra la alerta modal
+            $('#miAlertaModal').modal('hide');
+            // Redirige a la página de inicio de sesión
+            window.location.href = '/Core/PL/Login/Login.aspx';
+        }
+    </script>
+
 </head>
 <body>
 
@@ -235,6 +253,27 @@
                 </div>
             </div>
         </div>
+
+        <div id="miAlertaModal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Alerta</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Esta es una alerta modal.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" onclick="irAInicioDeSesion()">Ir a inicio de sesión</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
     </form>
 

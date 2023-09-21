@@ -34,8 +34,8 @@ namespace CRUD.Core.PL.Client
 
                         DBF.Cliente.Add(cliente);
                         DBF.SaveChanges();
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "showAlert", "realizarAccionPersonalizada();", true);
                     }
-                    // Redirige o muestra un mensaje de éxito aquí.
                 }
                 else
                 {
