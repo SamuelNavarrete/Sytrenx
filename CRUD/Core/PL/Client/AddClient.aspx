@@ -109,8 +109,14 @@
                     <div class="text-center mb-3">
                         <asp:Label ID="lblCorreo" runat="server" Text="Correo" Style="width: 300px;"></asp:Label>
                         <asp:TextBox ID="txbCorreo" runat="server" CssClass="form-control"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="El Correo no puede quedar vacio" ControlToValidate="txbCorreo" ForeColor="Red"></asp:RequiredFieldValidator>
-
+                        <asp:RegularExpressionValidator
+                            ID="regexEmailValidator"
+                            runat="server"
+                            ControlToValidate="txbCorreo"
+                            ErrorMessage="El correo electrónico no es válido."
+                            ValidationExpression="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                            ForeColor="Red"
+                            Display="Dynamic"></asp:RegularExpressionValidator>
                     </div>
 
                     <div class="text-center mb-3">
