@@ -14,8 +14,11 @@ namespace CRUD.Core.PL.Client
 
         }
 
+
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Botón clickeado');", true);
+
             using (SytrenxEntities DBF = new SytrenxEntities())
             {
                 Cliente cliente = new Cliente
@@ -31,11 +34,6 @@ namespace CRUD.Core.PL.Client
                 DBF.Cliente.Add(cliente);
                 DBF.SaveChanges();
             }
-        }
-
-        protected void btnBuscar_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

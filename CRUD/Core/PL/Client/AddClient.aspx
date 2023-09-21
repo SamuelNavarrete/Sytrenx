@@ -4,6 +4,11 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.3/jquery.validate.min.js"></script>
+
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Sytrenx</title>
@@ -122,19 +127,59 @@
                     <div class="text-center mb-3">
                         <asp:Label ID="lblVendedor" runat="server" Text="Contraseña" Style="width: 300px;"></asp:Label>
                         <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="La Contraseña no puede quedar vacia" ControlToValidate="txtPassword" ForeColor="Red"></asp:RequiredFieldValidator>
 
+                        <!-- Agrega un RequiredFieldValidator para la contraseña -->
+                        <asp:RequiredFieldValidator
+                            ID="rfvPassword"
+                            runat="server"
+                            ControlToValidate="txtPassword"
+                            ErrorMessage="La contraseña es requerida."
+                            ForeColor="Red"
+                            Display="Dynamic"
+                            EnableClientScript="false">
+                        </asp:RequiredFieldValidator>
+
+                        <!-- Agrega un RegularExpressionValidator para verificar la complejidad de la contraseña -->
+                        <asp:RegularExpressionValidator
+                            ID="revPassword"
+                            runat="server"
+                            ControlToValidate="txtPassword"
+                            ErrorMessage="La contraseña debe tener al menos 8 caracteres, incluyendo al menos 1 mayúscula, 1 número y 1 carácter especial."
+                            ForeColor="Red"
+                            Display="Dynamic"
+                            ValidationExpression="^(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,}$">
+                        </asp:RegularExpressionValidator>
                     </div>
 
                     <div class="text-center mb-3">
-                        <asp:Label ID="Label1" runat="server" Text="Confirmacion" Style="width: 300px;"></asp:Label>
+                        <asp:Label ID="Label1" runat="server" Text="Confirmación" Style="width: 300px;"></asp:Label>
                         <asp:TextBox ID="txtConfirmation" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="La Confirmacion no puede quedar vacia" ControlToValidate="txtConfirmation" ForeColor="Red"></asp:RequiredFieldValidator>
 
+                        <!-- Agrega un RequiredFieldValidator para la confirmación -->
+                        <asp:RequiredFieldValidator
+                            ID="rfvConfirmation"
+                            runat="server"
+                            ControlToValidate="txtConfirmation"
+                            ErrorMessage="La confirmación de la contraseña es requerida."
+                            ForeColor="Red"
+                            Display="Dynamic"></asp:RequiredFieldValidator>
+
+                        <!-- Agrega un CompareValidator para comparar la contraseña y su confirmación -->
+                        <asp:CompareValidator
+                            ID="cvPasswordConfirmation"
+                            runat="server"
+                            ControlToValidate="txtConfirmation"
+                            ControlToCompare="txtPassword"
+                            Operator="Equal"
+                            Type="String"
+                            ErrorMessage="Las contraseñas no coinciden."
+                            ForeColor="Red"
+                            Display="Dynamic"></asp:CompareValidator>
                     </div>
 
+
                     <div class="text-center">
-                        <asp:Button ID="btnAgregar" runat="server" Text="Registar" />
+                        <asp:Button ID="btnAgregar" runat="server" Text="Registar" OnClick="btnAgregar_Click" />
                     </div>
                 </div>
             </div>
@@ -143,7 +188,6 @@
     </form>
 
     </div>
-    </form>
     <br />
     <br />
     <br />
