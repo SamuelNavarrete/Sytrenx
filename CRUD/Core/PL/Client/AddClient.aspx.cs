@@ -34,7 +34,25 @@ namespace CRUD.Core.PL.Client
 
                         DBF.Cliente.Add(cliente);
                         DBF.SaveChanges();
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "showAlert", "realizarAccionPersonalizada();", true);
+
+                        string script = @"
+            <script type='text/javascript'>
+                $(document).ready(function() {
+                    Swal.fire({
+                        title: 'El registro fue exitoso!',
+                        icon: 'success',
+                        showCancelButton: true,
+                        confirmButtonText: 'Ir al inicio de sesión',
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = '/Core/PL/Login/Login.aspx';
+                        }
+                    });
+                });
+            </script>";
+
+                        // Registra el script en la página usando RegisterStartupScript
+                        ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", script);
                     }
                 }
                 else
