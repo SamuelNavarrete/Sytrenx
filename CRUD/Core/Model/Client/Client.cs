@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace CRUD.Core.Model.Client
+{
+    public class Cliente
+    {
+        public int Id { get; set; }
+        public string CorreoElectronico { get; set; }
+        public string Contraseña { get; set; }
+
+        
+    }
+
+}

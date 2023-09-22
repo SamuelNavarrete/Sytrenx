@@ -134,6 +134,9 @@
                     <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" Text="Entrar" ValidationGroup="Login" CssClass="btn btn-primary" />
                     <br />
                     <br />
+                    <asp:Label ID="lblMensajeError" runat="server" Text="" ForeColor="Red" Visible="false"></asp:Label>
+                    <br />
+                    <br />
                     <input type="checkbox" class="form-check-input" id="dropdownCheck" runat="server" />
                     <label class="form-check-label" for="dropdownCheck">Recordarme</label>
                     <br />

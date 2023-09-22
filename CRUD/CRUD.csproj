@@ -75,6 +75,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Model\Client\Client.cs" />
     <Compile Include="Core\PL\Client\AddClient.aspx.cs">
       <DependentUpon>AddClient.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
