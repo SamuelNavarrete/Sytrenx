@@ -18,15 +18,21 @@ namespace CRUD.Core.PL.Login
                 HttpCookie correoCookie = Request.Cookies["CorreoElectronico"];
                 HttpCookie contraseñaCookie = Request.Cookies["Contraseña"];
 
-                if (correoCookie != null && contraseñaCookie != null)
+                if (correoCookie != null)
                 {
-                    // Si se encuentran las cookies, carga los valores en los TextBox
+                    // Si se encuentran las cookies, carga los valores en los TextBox de correo
                     txbCorreo.Text = correoCookie.Value;
-                    txbPassword.Attributes["value"] = contraseñaCookie.Value;
-                    chkRecordarCredenciales.Checked = true; // Marca el CheckBox
+
+                    // Verifica si la cookie de contraseña no es nula antes de asignarla al TextBox de contraseña
+                    if (contraseñaCookie != null)
+                    {
+                        txbPassword.Attributes["value"] = contraseñaCookie.Value;
+                        chkRecordarCredenciales.Checked = true; // Marca el CheckBox
+                    }
                 }
             }
         }
+
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
@@ -61,11 +67,13 @@ namespace CRUD.Core.PL.Login
                     }
                     if (Request.Cookies["Contraseña"] != null)
                     {
+                        // Elimina la cookie de contraseña si existe antes de establecerla como nula
                         Response.Cookies["Contraseña"].Expires = DateTime.Now.AddDays(-1);
                     }
                 }
+                Session["Usuario"] = correoElectronico; // En este ejemplo, usamos el correo como identificador único del usuario
 
-                Response.Redirect("/Core/PL/Product/AllProducts.aspx");
+                Response.Redirect("/Core/PL/Home/Principal.aspx");
             }
             else
             {

@@ -11,7 +11,17 @@ namespace CRUD.Core.PL.Home
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                // Verifica si el usuario está autenticado
+                if (Session["Usuario"] == null)
+                {
+                    // Si no está autenticado, redirige a la página de inicio de sesión
+                    Response.Redirect("/Core/PL/Login/Login.aspx");
+                }
+            }
         }
+
+       
     }
 }
