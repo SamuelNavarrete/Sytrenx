@@ -167,6 +167,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Core\Common\CSS\Estilos.css" />
     <Content Include="Core\PL\Client\AddClient.aspx" />
     <Content Include="Core\PL\Home\Principal.aspx" />
     <Content Include="Core\PL\Login\Login.aspx" />
@@ -216,9 +217,7 @@
       <LastGenOutput>SytrenxDB.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Core\Common\CSS\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

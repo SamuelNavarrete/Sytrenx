@@ -6,10 +6,48 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Sytrenx</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
+    <link href="/Core/Common/CSS/estilos.css" rel="stylesheet" type="text/css">
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const navLinks = document.querySelectorAll(".nav-link");
+
+            navLinks.forEach(function (link) {
+                link.addEventListener("click", function () {
+                    // Elimina la clase 'selected' de todos los elementos
+                    navLinks.forEach(function (navLink) {
+                        navLink.classList.remove("selected");
+                    });
+
+                    // Agrega la clase 'selected' solo al elemento actual
+                    this.classList.add("selected");
+                });
+            });
+        });
+
+        // Este código garantiza que la clase 'selected' se mantenga después de recargar la página
+        window.addEventListener("load", function () {
+            const currentPath = window.location.pathname;
+            const navLinks = document.querySelectorAll(".nav-link");
+
+            navLinks.forEach(function (link) {
+                if (link.getAttribute("href") === currentPath) {
+                    // Si el enlace coincide con la URL actual, agrega la clase 'selected'
+                    link.classList.add("selected");
+                }
+            });
+        });
+    </script>
 
     <script type="text/javascript">
         function mostrarAlertaCerrarSesion() {
@@ -32,6 +70,23 @@
         }
     </script>
 
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            var productosLink = document.getElementById("productosLink");
+
+            // Verifica si el usuario está autenticado (puedes ajustar esta lógica según tu implementación)
+            var usuarioAutenticado = <%= Session["Usuario"] != null ? "true" : "false" %>;
+
+            // Agrega un manejador de clic al enlace de "Productos"
+            productosLink.addEventListener("click", function (e) {
+                // Si el usuario no está autenticado, evita la redirección y muestra un mensaje
+                if (!usuarioAutenticado) {
+                    e.preventDefault(); // Evita la acción predeterminada del enlace
+                    alert("Debe iniciar sesión para acceder a los productos.");
+                }
+            });
+        });
+    </script>
 
 </head>
 
@@ -59,16 +114,16 @@
 
                                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                                     <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="#">Pagina Principal</a>
+                                        <a class="nav-link selected" aria-current="page" href="/Core/PL/Home/Principal.aspx">Pagina Principal</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Productos</a>
+                                        <a class="nav-link" href="/Core/PL/Product/AllProducts.aspx">Productos</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">Compras</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="/Core/PL/Login/Login.aspx" onclick="return mostrarAlertaCerrarSesion();" runat="server" >Cerrar Sesión</a>
+                                        <a class="nav-link" href="/Core/PL/Login/Login.aspx" onclick="return mostrarAlertaCerrarSesion();" runat="server">Cerrar Sesión</a>
                                     </li>
                                 </ul>
 

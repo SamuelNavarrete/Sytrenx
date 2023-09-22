@@ -1,0 +1,9 @@
+﻿/* Estilo para el texto blanco en estado normal */
+.nav-link {
+    color: otro-color !important; /* Define el color predeterminado */
+}
+
+    /* Estilo para el texto blanco cuando se selecciona un elemento */
+    .nav-link.selected {
+        color: white !important;
+    }

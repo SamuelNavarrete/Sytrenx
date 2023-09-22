@@ -22,12 +22,12 @@ namespace CRUD.Core.PL.Login
                 {
                     // Si se encuentran las cookies, carga los valores en los TextBox de correo
                     txbCorreo.Text = correoCookie.Value;
+                    chkRecordarCredenciales.Checked = true; // Marca el CheckBox
 
                     // Verifica si la cookie de contraseña no es nula antes de asignarla al TextBox de contraseña
                     if (contraseñaCookie != null)
                     {
                         txbPassword.Attributes["value"] = contraseñaCookie.Value;
-                        chkRecordarCredenciales.Checked = true; // Marca el CheckBox
                     }
                 }
             }

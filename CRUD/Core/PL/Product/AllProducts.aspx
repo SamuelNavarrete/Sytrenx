@@ -8,6 +8,40 @@
     <title>Sytrenx</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+
+    <link href="/Core/Common/CSS/estilos.css" rel="stylesheet" type="text/css">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const navLinks = document.querySelectorAll(".nav-link");
+
+            navLinks.forEach(function (link) {
+                link.addEventListener("click", function () {
+                    // Elimina la clase 'selected' de todos los elementos
+                    navLinks.forEach(function (navLink) {
+                        navLink.classList.remove("selected");
+                    });
+
+                    // Agrega la clase 'selected' solo al elemento actual
+                    this.classList.add("selected");
+                });
+            });
+        });
+
+        // Este código garantiza que la clase 'selected' se mantenga después de recargar la página
+        window.addEventListener("load", function () {
+            const currentPath = window.location.pathname;
+            const navLinks = document.querySelectorAll(".nav-link");
+
+            navLinks.forEach(function (link) {
+                if (link.getAttribute("href") === currentPath) {
+                    // Si el enlace coincide con la URL actual, agrega la clase 'selected'
+                    link.classList.add("selected");
+                }
+            });
+        });
+    </script>
+
 </head>
 
 <body>
@@ -30,31 +64,22 @@
                                 </button>
                             </div>
                             <div class="offcanvas-body">
+
                                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                                     <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="#">Pagina Principal</a>
+                                        <a class="nav-link" href="/Core/PL/Home/Principal.aspx">Pagina Principal</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Productos</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Iniciar Sesion</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Registrarse</a>
+                                        <a class="nav-link" href="/Core/PL/Product/AllProducts.aspx">Productos</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">Compras</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Cerrar Sesion</a>
+                                        <a class="nav-link" href="/Core/PL/Login/Login.aspx" onclick="return mostrarAlertaCerrarSesion();" runat="server">Cerrar Sesión</a>
                                     </li>
                                 </ul>
-                                <form class="d-flex mt-3" role="search">
-                                    <input class="form-control me-2" type="search" placeholder="Search"
-                                        aria-label="Search">
-                                    <button class="btn btn-success" type="submit">Search</button>
-                                </form>
+
                             </div>
                         </div>
                     </div>
