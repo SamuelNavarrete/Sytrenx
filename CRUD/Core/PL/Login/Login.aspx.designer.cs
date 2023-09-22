@@ -105,13 +105,13 @@ namespace CRUD.Core.PL.Login
         protected global::System.Web.UI.WebControls.Label lblMensajeError;
 
         /// <summary>
-        /// Control dropdownCheck.
+        /// Control chkRecordarCredenciales.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox dropdownCheck;
+        protected global::System.Web.UI.WebControls.CheckBox chkRecordarCredenciales;
 
         /// <summary>
         /// Control valSummary.

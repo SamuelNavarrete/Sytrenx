@@ -12,7 +12,20 @@ namespace CRUD.Core.PL.Login
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                // Verifica si existen cookies para recordar el correo y la contraseña
+                HttpCookie correoCookie = Request.Cookies["CorreoElectronico"];
+                HttpCookie contraseñaCookie = Request.Cookies["Contraseña"];
 
+                if (correoCookie != null && contraseñaCookie != null)
+                {
+                    // Si se encuentran las cookies, carga los valores en los TextBox
+                    txbCorreo.Text = correoCookie.Value;
+                    txbPassword.Attributes["value"] = contraseñaCookie.Value;
+                    chkRecordarCredenciales.Checked = true; // Marca el CheckBox
+                }
+            }
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
@@ -23,6 +36,35 @@ namespace CRUD.Core.PL.Login
             if (ValidarCredenciales(correoElectronico, contraseña))
             {
                 // Las credenciales son válidas, redirige al usuario a la página de productos
+
+                // Verifica si el usuario desea recordar las credenciales
+                if (chkRecordarCredenciales.Checked)
+                {
+                    // Crea cookies para recordar el correo y la contraseña
+                    HttpCookie correoCookie = new HttpCookie("CorreoElectronico", correoElectronico);
+                    HttpCookie contraseñaCookie = new HttpCookie("Contraseña", contraseña);
+
+                    // Establece la fecha de expiración de las cookies (por ejemplo, 30 días)
+                    correoCookie.Expires = DateTime.Now.AddDays(30);
+                    contraseñaCookie.Expires = DateTime.Now.AddDays(30);
+
+                    // Agrega las cookies a la respuesta
+                    Response.Cookies.Add(correoCookie);
+                    Response.Cookies.Add(contraseñaCookie);
+                }
+                else
+                {
+                    // Si el usuario no desea recordar las credenciales, elimina las cookies si existen
+                    if (Request.Cookies["CorreoElectronico"] != null)
+                    {
+                        Response.Cookies["CorreoElectronico"].Expires = DateTime.Now.AddDays(-1);
+                    }
+                    if (Request.Cookies["Contraseña"] != null)
+                    {
+                        Response.Cookies["Contraseña"].Expires = DateTime.Now.AddDays(-1);
+                    }
+                }
+
                 Response.Redirect("/Core/PL/Product/AllProducts.aspx");
             }
             else
@@ -57,5 +99,7 @@ namespace CRUD.Core.PL.Login
             // Las credenciales no son válidas
             return false;
         }
+
+
     }
 }

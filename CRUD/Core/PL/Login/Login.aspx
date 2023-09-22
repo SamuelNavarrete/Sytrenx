@@ -137,8 +137,8 @@
                     <asp:Label ID="lblMensajeError" runat="server" Text="" ForeColor="Red" Visible="false"></asp:Label>
                     <br />
                     <br />
-                    <input type="checkbox" class="form-check-input" id="dropdownCheck" runat="server" />
-                    <label class="form-check-label" for="dropdownCheck">Recordarme</label>
+                    <asp:CheckBox ID="chkRecordarCredenciales" runat="server" Text="Recordarme" />
+                    &nbsp;
                     <br />
                     <br />
                     <br />
