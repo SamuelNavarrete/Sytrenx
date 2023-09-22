@@ -72,21 +72,64 @@
             </div>
             <br>
             <br>
+
             <asp:Panel ID="pnlLogin" runat="server">
                 <center>
-                    <label for="name">CORREO ELECTRÓNICO</label>
+                    <label for="txbCorreo">CORREO ELECTRÓNICO</label>
+                    <br />
+                    <asp:TextBox ID="txbCorreo" runat="server" CssClass="form-control" style="width: 250px;"></asp:TextBox>
+
+                    <asp:RequiredFieldValidator
+                        ID="rfvEmail"
+                        runat="server"
+                        ControlToValidate="txbCorreo"
+                        ErrorMessage="El Correo es requerido."
+                        ForeColor="Red"
+                        Display="Dynamic"
+                        EnableClientScript="true"
+                        ValidationGroup="Login">
+                    </asp:RequiredFieldValidator>
+
+                    <asp:RegularExpressionValidator
+                        ID="regexEmailValidator"
+                        runat="server"
+                        ControlToValidate="txbCorreo"
+                        ErrorMessage="El correo electrónico no es válido."
+                        ValidationExpression="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                        ForeColor="Red"
+                        Display="Dynamic"
+                        EnableClientScript="true"
+                        ValidationGroup="Login">
+                    </asp:RegularExpressionValidator>
+
                     <br />
                     <br />
-                    <input type="text" id="name" name="user_name" class="form-control" runat="server" style="width: 250px;" />
+                    <label for="txbPassword">CONTRASEÑA</label>
                     <br />
-                    <br />
-                    <label for="mail">CONTRASEÑA</label>
-                    <br />
-                    <br />
-                    <input type="password" id="mail" name="user_mail" class="form-control" runat="server" style="width: 250px;" />
-                    <br />
-                    <br />
-                    <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" Text="Entrar" ValidationGroup="Login" CssClass="btn btn-primary" />
+                    <asp:TextBox ID="txbPassword" runat="server" CssClass="form-control" TextMode="Password" style="width: 250px;"></asp:TextBox>
+
+                    <asp:RequiredFieldValidator
+                        ID="rfvPassword"
+                        runat="server"
+                        ControlToValidate="txbPassword"
+                        ErrorMessage="La contraseña es requerida."
+                        ForeColor="Red"
+                        Display="Dynamic"
+                        EnableClientScript="true"
+                        ValidationGroup="Login">
+                    </asp:RequiredFieldValidator>
+
+                    <asp:RegularExpressionValidator
+                        ID="revPassword"
+                        runat="server"
+                        ControlToValidate="txbPassword"
+                        ErrorMessage="La contraseña debe tener al menos 8 caracteres, incluyendo al menos 1 mayúscula, 1 número y 1 carácter especial."
+                        ForeColor="Red"
+                        Display="Dynamic"
+                        ValidationExpression="^(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,}$"
+                        ValidationGroup="Login">
+                    </asp:RegularExpressionValidator>
+
                     <br />
                     <br />
                     <input type="checkbox" class="form-check-input" id="dropdownCheck" runat="server" />
@@ -94,61 +137,15 @@
                     <br />
                     <br />
                     <br />
-                    <br />
-                    <br />
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="/Core/PL/Client/AddClient.aspx" style="text-decoration: underline; color: blue;">Registrarse</a>
                     <span style="margin: 0 10px;">&nbsp;</span>
                     <a class="dropdown-item" href="/RutaDeRecuperacion.aspx" style="text-decoration: underline; color: blue;">¿Olvidó su contraseña?</a>
+
                 </center>
             </asp:Panel>
 
             <asp:ValidationSummary ID="valSummary" runat="server" ValidationGroup="Login" ShowMessageBox="true" ShowSummary="false" />
-
-            <asp:RequiredFieldValidator
-                ID="rfvEmail"
-                runat="server"
-                ControlToValidate="name"
-                ErrorMessage="El Correo es requerido."
-                ForeColor="Red"
-                Display="Dynamic"
-                EnableClientScript="true"
-                ValidationGroup="Login">
-            </asp:RequiredFieldValidator>
-
-            <asp:RegularExpressionValidator
-                ID="regexEmailValidator"
-                runat="server"
-                ControlToValidate="name"
-                ErrorMessage="El correo electrónico no es válido."
-                ValidationExpression="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-                ForeColor="Red"
-                Display="Dynamic"
-                EnableClientScript="true"
-                ValidationGroup="Login">
-            </asp:RegularExpressionValidator>
-
-            <asp:RequiredFieldValidator
-                ID="rfvPassword"
-                runat="server"
-                ControlToValidate="mail"
-                ErrorMessage="La contraseña es requerida."
-                ForeColor="Red"
-                Display="Dynamic"
-                EnableClientScript="true"
-                ValidationGroup="Login">
-            </asp:RequiredFieldValidator>
-
-            <asp:RegularExpressionValidator
-                ID="revPassword"
-                runat="server"
-                ControlToValidate="mail"
-                ErrorMessage="La contraseña debe tener al menos 8 caracteres, incluyendo al menos 1 mayúscula, 1 número y 1 carácter especial."
-                ForeColor="Red"
-                Display="Dynamic"
-                ValidationExpression="^(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,}$"
-                ValidationGroup="Login">
-            </asp:RegularExpressionValidator>
 
             <br>
             <br>

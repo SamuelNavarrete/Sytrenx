@@ -33,49 +33,13 @@ namespace CRUD.Core.PL.Login
         protected global::System.Web.UI.WebControls.Panel pnlLogin;
 
         /// <summary>
-        /// Control name.
+        /// Control txbCorreo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText name;
-
-        /// <summary>
-        /// Control mail.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword mail;
-
-        /// <summary>
-        /// Control btnLogin.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogin;
-
-        /// <summary>
-        /// Control dropdownCheck.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox dropdownCheck;
-
-        /// <summary>
-        /// Control valSummary.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary valSummary;
+        protected global::System.Web.UI.WebControls.TextBox txbCorreo;
 
         /// <summary>
         /// Control rfvEmail.
@@ -96,6 +60,15 @@ namespace CRUD.Core.PL.Login
         protected global::System.Web.UI.WebControls.RegularExpressionValidator regexEmailValidator;
 
         /// <summary>
+        /// Control txbPassword.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txbPassword;
+
+        /// <summary>
         /// Control rfvPassword.
         /// </summary>
         /// <remarks>
@@ -112,5 +85,23 @@ namespace CRUD.Core.PL.Login
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator revPassword;
+
+        /// <summary>
+        /// Control dropdownCheck.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox dropdownCheck;
+
+        /// <summary>
+        /// Control valSummary.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary valSummary;
     }
 }
