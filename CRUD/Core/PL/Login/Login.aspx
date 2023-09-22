@@ -123,7 +123,7 @@
                         ID="revPassword"
                         runat="server"
                         ControlToValidate="txbPassword"
-                        ErrorMessage="La contraseña debe tener al menos 8 caracteres, incluyendo al menos 1 mayúscula, 1 número y 1 carácter especial."
+                        ErrorMessage= "El contraseña no es valida."
                         ForeColor="Red"
                         Display="Dynamic"
                         ValidationExpression="^(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,}$"
