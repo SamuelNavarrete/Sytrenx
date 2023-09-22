@@ -129,7 +129,9 @@
                         ValidationExpression="^(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,}$"
                         ValidationGroup="Login">
                     </asp:RegularExpressionValidator>
-
+                    <br />
+                    <br />
+                    <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" Text="Entrar" ValidationGroup="Login" CssClass="btn btn-primary" />
                     <br />
                     <br />
                     <input type="checkbox" class="form-check-input" id="dropdownCheck" runat="server" />
