@@ -69,5 +69,6 @@ namespace CRUD
         {
             File.WriteAllText(@"C:\JsonSytrenx\Reporte.json", "[" + Session["TxtJSON"].ToString() + "]");
         }
+
     }
 }

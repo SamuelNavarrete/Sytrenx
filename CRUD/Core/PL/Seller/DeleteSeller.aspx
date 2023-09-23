@@ -112,7 +112,7 @@
              <br />
              <asp:TextBox ID="txbEliminar" runat="server"></asp:TextBox>
              <br />
-             <asp:Button ID="btnEliminar" runat="server" OnClick="btnEliminar_Click" Text="Elimiar" />
+             <asp:Button ID="btnEliminar" runat="server" OnClick="btnEliminar_Click" Text="Eliminar" />
     <br/>
     <br/>
     <br/>

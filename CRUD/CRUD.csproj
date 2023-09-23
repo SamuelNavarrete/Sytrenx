@@ -110,6 +110,7 @@
     <Compile Include="Core\PL\Seller\DeleteSeller.aspx.designer.cs">
       <DependentUpon>DeleteSeller.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Core\xml\CreateXml.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

@@ -23,10 +23,10 @@ namespace CRUD.Core.PL.Seller
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            myMethodFind();
+            mostrarVendedor();
         }
 
-        public void myMethodFind()
+        public void mostrarVendedor()
         {
             string vBus = txbId.Text;
 
@@ -47,10 +47,10 @@ namespace CRUD.Core.PL.Seller
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            BotonBorrar();
+            borrarVendedor();
         }
 
-        public void BotonBorrar()
+        public void borrarVendedor()
         {
             string vBorrarVendedor = txbEliminar.Text;
             using (SytrenxEntities oBorrar = new SytrenxEntities())

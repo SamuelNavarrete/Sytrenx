@@ -36,4 +36,3 @@ Id_Cantidad_Producto INT NOT NULL,
 Id_Vendedor INT NOT NULL);
 
 SELECT * FROM Vendedor;
-SELECT * FROM Productos;
