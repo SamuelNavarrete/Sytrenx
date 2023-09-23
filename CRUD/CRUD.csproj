@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Model\Client\Client.cs" />
+    <Compile Include="Core\Model\Product\Product.cs" />
     <Compile Include="Core\PL\Client\AddClient.aspx.cs">
       <DependentUpon>AddClient.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -110,6 +111,13 @@
     </Compile>
     <Compile Include="Core\PL\Product\AllProducts.aspx.designer.cs">
       <DependentUpon>AllProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Core\PL\Product\DescriptionProduct.aspx.cs">
+      <DependentUpon>DescriptionProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Core\PL\Product\DescriptionProduct.aspx.designer.cs">
+      <DependentUpon>DescriptionProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="Core\PL\Seller\AddSeller.aspx.cs">
       <DependentUpon>AddSeller.aspx</DependentUpon>
@@ -173,6 +181,7 @@
     <Content Include="Core\PL\Login\Login.aspx" />
     <Content Include="Core\PL\Product\AddProduct.aspx" />
     <Content Include="Core\PL\Product\AllProducts.aspx" />
+    <Content Include="Core\PL\Product\DescriptionProduct.aspx" />
     <Content Include="Core\PL\Seller\AddSeller.aspx" />
     <Content Include="Core\PL\Seller\DeleteSeller.aspx" />
     <Content Include="Core\Resoruce\Assets\aliquido.jpg" />

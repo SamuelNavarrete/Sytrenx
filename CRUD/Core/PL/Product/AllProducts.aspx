@@ -97,84 +97,108 @@
             </div>
         </div>
         <br>
-        <div class="row">
-            <div class="col-md">
-                <div class="card mb-3" style="max-width: 1000px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="../../Resoruce/Assets/aliquido.jpg" class="img-fluid rounded-start" alt="..." />
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card-body">
-                                <h5 class="card-title">Azufre Liquido</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+       
+          <!-- Agrega un contenedor para mostrar las tarjetas de productos -->
+        <div class="row" id="product-container">
+            <!-- Las tarjetas de productos se cargarán dinámicamente aquí -->
+            <% foreach (var product in products) { %>
+                <div class="col-md-4">
+                    <div class="card mb-3" style="max-width: 1000px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="<%= product.ImageUrl %>" class="img-fluid rounded-start" alt="...">
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card-body">
-                                <h5 class="card-title">Azufre Liquido</h5>
+                            <div class="col-md-4">
+                                <div class="card-body">
+                                    <h5 class="card-title"><%= product.Name %></h5>
+                                    <p class="card-text"><%= product.Description %></p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card-body">
+                                    <!-- Agrega un enlace con los datos del producto como parámetros de consulta -->
+                                    <a href="DescriptionProduct.aspx?id=<%= product.Id %>" class="btn btn-primary btn-sm">Ver Detalles</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            <% } %>
         </div>
         <br>
-        <div class="row">
-            <div class="col-md">
-                <div class="card mb-3" style="max-width: 1000px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="../../Resoruce/Assets/asolido.jpg" class="img-fluid rounded-start" alt="..." />
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card-body">
-                                <h5 class="card-title">Azufre Solido</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card-body">
-                                <h5 class="card-title">Grueso</h5>
-                                <h5 class="card-title">Fino</h5>
-                                <h5 class="card-title">G1</h5>
-                                <h5 class="card-title">G2</h5>
-                                <h5 class="card-title">Laja</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <br>
-        <div class="row">
-            <div class="col-md">
-                <div class="card mb-3" style="max-width: 1000px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="../../Resoruce/Assets/amolienda.jpg" class="img-fluid rounded-start" alt="..." />
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card-body">
-                                <h5 class="card-title">Azufre Solido</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card-body">
-                                <h5 class="card-title">Azufre 100% Extra Fino</h5>
-                                <h5 class="card-title">Azufre Agricola 93%</h5>
-                                <h5 class="card-title">Azufre Humectable</h5>
-                                <h5 class="card-title">Azufre Flowable</h5>
+        <br>
+        <div class="row" style="background-color: rgba(128, 128, 128, 0.178);">
+            <!-- ... (código de pie de página) ... -->
+        </div>
+    </div>
+
+    <!-- Agrega el código JavaScript necesario para cargar las tarjetas dinámicamente -->
+    <script>
+        // Datos de productos (puedes cargar esto desde el servidor)
+        const products = [
+            {
+                id: 1,
+                name: 'Azufre Liquido',
+                description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
+                imageUrl: '../../Resoruce/Assets/aliquido.jpg'
+            },
+            {
+                id: 2,
+                name: 'Azufre Sólido',
+                description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
+                imageUrl: '../../Resoruce/Assets/amolienda.jpg'
+            },
+            {
+                id: 3,
+                name: 'Azufre Sólido',
+                description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
+                imageUrl: '../../Resoruce/Assets/amolienda.jpg'
+            },
+            {
+                id: 4,
+                name: 'Producto 4',
+                description: 'Description for Product 4.',
+                imageUrl: '../../Resoruce/Assets/producto4.jpg'
+            }
+        ];
+
+        // Función para cargar las tarjetas de productos
+        function loadProducts() {
+            const productContainer = document.getElementById('product-container');
+
+            products.forEach(product => {
+                const cardHtml = `
+                    <div class="col-md-4">
+                        <div class="card mb-3" style="max-width: 1000px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="${product.imageUrl}" class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${product.name}</h5>
+                                        <p class="card-text">${product.description}</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card-body">
+                                        <a href="DescriptionProduct.aspx?id=${product.id}" class="btn btn-primary btn-sm">Ver Detalles</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
+                `;
+
+                productContainer.innerHTML += cardHtml;
+            });
+        }
+
+        // Carga las tarjetas de productos al cargar la página
+        window.addEventListener("load", loadProducts);
+    </script>
+
         <br>
         <div class="row" style="background-color: rgba(128, 128, 128, 0.178);">
             <div class="col-md-4">
@@ -212,5 +236,4 @@
         crossorigin="anonymous">
     </script>
 </body>
-
 </html>
