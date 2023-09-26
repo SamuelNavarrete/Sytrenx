@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
-    
+
     <link href="/Core/Common/CSS/estilos.css" rel="stylesheet" type="text/css">
 
     <!-- Agrega el código JavaScript necesario para cargar las tarjetas dinámicamente -->
@@ -54,31 +54,30 @@
     </script>
 
     <style>
-        /* Cambia el color de fondo de los indicadores del carrusel */
-        .carousel-indicators {
-            bottom: -40px; /* Posiciona los indicadores por debajo del carrusel */
-        }
-
-        .carousel-indicators li {
-            background-color: #000; /* Cambia el color de fondo a negro (#000) */
-        }
-
-        /* Cambia el color de los botones de navegación del carrusel (flechas) */
+        /* Estilos para los botones de navegación del carrusel */
         .carousel-control-prev,
         .carousel-control-next {
-            background-color: #000; /* Cambia el color de las flechas a negro (#000) */
+            background-color: transparent; /* Establece el fondo de los botones como transparente */
+            width: 30px; /* Establece el ancho de los botones */
+            height: 30px; /* Establece la altura de los botones */
+            background-image: url('glyphicon glyphicon-chevron-left.png'); /* Establece la imagen de la flecha izquierda */
+            background-size: cover; /* Ajusta el tamaño de la imagen para cubrir el botón */
         }
 
-        /* Cambia el color del ícono de flecha en los botones de navegación del carrusel */
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            background-color: #fff; /* Cambia el color del ícono a blanco (#fff) */
+        .carousel-control-next {
+            background-image: url('glyphicon glyphicon-chevron-right.png'); /* Establece la imagen de la flecha derecha */
         }
 
-        /* Cambia el color del ícono de flecha en los botones de navegación del carrusel al pasar el mouse */
-        .carousel-control-prev:hover .carousel-control-prev-icon,
-        .carousel-control-next:hover .carousel-control-next-icon {
-            background-color: #fff; /* Cambia el color del ícono al pasar el mouse */
+            /* Cambia el color de fondo al pasar el mouse */
+            .carousel-control-prev:hover,
+            .carousel-control-next:hover {
+                background-color: transparent; /* Establece el fondo como transparente al pasar el mouse */
+            }
+
+        /* Cambia el color de las flechas a negro */
+        .carousel-control-prev,
+        .carousel-control-next {
+            filter: invert(100%); /* Invierte los colores de la imagen a blanco y negro */
         }
     </style>
 
@@ -139,15 +138,6 @@
         <div class="row">
             <div class="col-md">
                 <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <!-- Indicadores -->
-                    <ol class="carousel-indicators">
-                        <% for (int i = 0; i < Math.Ceiling((double)products.Count / 3); i++)
-                            { %>
-                        <li data-bs-target="#productCarousel" data-bs-slide-to="<%= i %>" <% if (i == 0)
-                            { %>class="active"
-                            <% } %>></li>
-                        <% } %>
-                    </ol>
                     <!-- Slides -->
                     <div class="carousel-inner">
                         <% for (int i = 0; i < Math.Ceiling((double)products.Count / 3); i++)
@@ -182,18 +172,19 @@
                         </div>
                         <% } %>
                     </div>
-                    <!-- Controles izquierda y derecha -->
+                    <!-- Controles izquierda y derecha (fuera del contenedor principal) -->
                     <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Anterior</span>
                     </button>
                     <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Siguiente</span>
                     </button>
                 </div>
             </div>
         </div>
+
+        <br>
+
         <br>
         <div class="row" style="background-color: rgba(128, 128, 128, 0.178);">
             <div class="col-md-4">
