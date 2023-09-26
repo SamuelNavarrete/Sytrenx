@@ -126,99 +126,71 @@
         <br>
         <br>
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class="container">
-            <div class="row">
-                <div class="col-md">
-                    <nav class="navbar navbar-dark bg-dark fixed-top">
-                        <!-- ... (código de navegación) ... -->
-                    </nav>
-                </div>
-            </div>
-            <!-- ... (código de encabezado) ... -->
-            <br>
-            <br>
-            <br>
-            <div class="row">
-                <div class="col-md">
-                    <center>
-                        <img src="../../Resoruce/Assets/Logo.jpg" alt="Logo" width="200"
-                            height="200">
-                    </center>
-                </div>
-            </div>
-            <br>
-            <br>
-            <br>
-            <!-- Contenedor para mostrar los detalles del producto -->
 
-            <div id="product-details" class="card mb-3" style="max-width: 1000px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img id="product-image" src="" class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 id="product-name" class="card-title"><%# Product.Name %></h5>
-                            <p id="product-description" class="card-text"><%# Product.Description %></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- Contenedor para mostrar los detalles del producto -->
 
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <div class="row" style="background-color: rgba(128, 128, 128, 0.178);">
+        <div id="product-details" class="card mb-3" style="max-width: 1000px;">
+            <div class="row g-0">
                 <div class="col-md-4">
-                    <footer>
-                        <address>
-                            Conocenos<br>
-                        </address>
-                        <ul>
-                            <li><a href="/">Correo</a></li>
-                            <li><a href="/food">Direccion</a></li>
-                            <li><a href="/drinks">Ubicacion</a></li>
-                        </ul>
-                    </footer>
+                    <img id="product-image" src="" class="img-fluid rounded-start" alt="...">
                 </div>
-                <div class="col-md-2">
-                    <br>
-                    <center>
-                        <img src="../../Resoruce/Assets/doc.jpg" alt="Logo" width="50"
-                            height="50">
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 id="product-name" class="card-title"><%# Product.Name %></h5>
+                        <p id="product-description" class="card-text"><%# Product.Description %></p>
+                    </div>
                 </div>
-                <div class="col-md-2">
-                    <br>
-                    <center>
-                        <img src="../../Resoruce/Assets/doc.jpg" alt="Logo" width="50"
-                            height="50">
-                </div>
-                <div class="col-md-2">
-                    <br>
-                    <center>
-                        <img src="../../Resoruce/Assets/doc.jpg" alt="Logo" width="50"
-                            height="50">
-                </div>
-
             </div>
         </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row" style="background-color: rgba(128, 128, 128, 0.178);">
+            <div class="col-md-4">
+                <footer>
+                    <address>
+                        Conocenos<br>
+                    </address>
+                    <ul>
+                        <li><a href="/">Correo</a></li>
+                        <li><a href="/food">Direccion</a></li>
+                        <li><a href="/drinks">Ubicacion</a></li>
+                    </ul>
+                </footer>
+            </div>
+            <div class="col-md-2">
+                <br>
+                <center>
+                    <img src="../../Resoruce/Assets/doc.jpg" alt="Logo" width="50"
+                        height="50">
+            </div>
+            <div class="col-md-2">
+                <br>
+                <center>
+                    <img src="../../Resoruce/Assets/doc.jpg" alt="Logo" width="50"
+                        height="50">
+            </div>
+            <div class="col-md-2">
+                <br>
+                <center>
+                    <img src="../../Resoruce/Assets/doc.jpg" alt="Logo" width="50"
+                        height="50">
+            </div>
+
+        </div>
+    </div>
 </body>
 
 </html>

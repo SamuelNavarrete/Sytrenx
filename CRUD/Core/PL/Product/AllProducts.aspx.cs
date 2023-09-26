@@ -11,6 +11,9 @@ namespace CRUD.Core.PL.Product
             new Core.Model.Product.Product { Id = 1, Name = "Azufre Liquido", Description = "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.", ImageUrl = "../../Resoruce/Assets/aliquido.jpg" },
             new Core.Model.Product.Product { Id = 2, Name = "Azufre Sólido", Description = "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.", ImageUrl = "../../Resoruce/Assets/amolienda.jpg" },
             new Core.Model.Product.Product { Id = 3, Name = "Azufre Sólido", Description = "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.", ImageUrl = "../../Resoruce/Assets/amolienda.jpg" },
+            new Core.Model.Product.Product { Id = 4, Name = "Azufre Sólido", Description = "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.", ImageUrl = "../../Resoruce/Assets/amolienda.jpg" },
+            new Core.Model.Product.Product { Id = 5, Name = "Azufre Liquido", Description = "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.", ImageUrl = "../../Resoruce/Assets/aliquido.jpg" },
+            new Core.Model.Product.Product { Id = 6, Name = "Azufre Sólido", Description = "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.", ImageUrl = "../../Resoruce/Assets/amolienda.jpg" },
             // Agrega más productos aquí
         };
 
