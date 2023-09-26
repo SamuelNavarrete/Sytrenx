@@ -20,36 +20,23 @@
         const productId = params.get('id');
         const image = params.get('image');
 
-        // Datos de productos (puedes cargar esto desde el servidor)
-        const products = [
-            {
-                id: 1,
-                name: 'Azufre Liquido',
-                description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
-                imageUrl: '../../Resoruce/Assets/aliquido.jpg'
-            },
-            {
-                id: 2,
-                name: 'Azufre Sólido',
-                description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
-                imageUrl: '../../Resoruce/Assets/amolienda.jpg'
-            },
-            // Agrega más productos aquí
-        ];
-
-        // Función para cargar los detalles del producto
+        // Función para cargar los detalles del producto desde una fuente externa (por ejemplo, una solicitud AJAX)
         function loadProductDetails() {
-            const product = products.find(p => p.id === parseInt(productId));
-
-            if (product) {
-                // Actualizar elementos HTML con los datos del producto
-                document.getElementById('product-name').textContent = product.name;
-                document.getElementById('product-description').textContent = product.description;
-                document.getElementById('product-image').src = image; // Usar la URL de la imagen pasada como parámetro
-            } else {
-                // Manejar el caso en el que no se encuentre el producto
-                alert('Producto no encontrado.');
-            }
+            // Realiza una solicitud AJAX para obtener los detalles del producto desde tu servidor
+            // Puedes usar una biblioteca como Axios o Fetch API para hacer la solicitud
+            // Aquí se muestra un ejemplo ficticio:
+            fetch(`/api/products/${productId}`) // Reemplaza la URL con la ruta correcta para obtener los detalles del producto
+                .then(response => response.json())
+                .then(product => {
+                    // Actualizar elementos HTML con los datos del producto
+                    document.getElementById('product-name').textContent = product.name;
+                    document.getElementById('product-description').textContent = product.description;
+                    document.getElementById('product-image').src = image; // Usar la URL de la imagen pasada como parámetro
+                })
+                .catch(error => {
+                    console.error('Error al cargar los detalles del producto:', error);
+                    // Manejar errores
+                });
         }
 
         // Cargar los detalles del producto al cargar la página
@@ -136,8 +123,8 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 id="product-name" class="card-title"><%# Product.Name %></h5>
-                        <p id="product-description" class="card-text"><%# Product.Description %></p>
+                        <h5 id="product-name" class="card-title"></h5>
+                        <p id="product-description" class="card-text"></p>
                     </div>
                 </div>
             </div>
