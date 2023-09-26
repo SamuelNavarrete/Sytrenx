@@ -81,6 +81,34 @@
         }
     </style>
 
+    <style>
+        /* Estilos para los botones de navegación del carrusel */
+        .carousel-control-prev,
+        .carousel-control-next {
+            background-color: transparent; /* Establece el fondo de los botones como transparente */
+            width: 30px; /* Establece el ancho de los botones */
+            height: 30px; /* Establece la altura de los botones */
+            background-size: cover; /* Ajusta el tamaño de la imagen para cubrir el botón */
+            position: absolute; /* Establece la posición absoluta para que los botones sean posicionados en relación al carrusel */
+            top: 50%; /* Posición vertical en el 50% del carrusel */
+            transform: translateY(-50%); /* Ajusta la posición vertical para centrar los botones */
+        }
+
+        .carousel-control-prev {
+            left: 0; /* Posición izquierda para el botón previo */
+        }
+
+        .carousel-control-next {
+            right: 0; /* Posición derecha para el botón siguiente */
+        }
+
+            /* Cambia el color de fondo al pasar el mouse */
+            .carousel-control-prev:hover,
+            .carousel-control-next:hover {
+                background-color: transparent; /* Establece el fondo como transparente al pasar el mouse */
+            }
+    </style>
+
 </head>
 
 <body>
