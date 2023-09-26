@@ -5,11 +5,11 @@
       <EntityTypeMapping TypeName="SytrenxModel.Cliente">
         <MappingFragment StoreEntitySet="Cliente">
           <ScalarProperty Name="Contraseña_Cliente" ColumnName="Contraseña_Cliente" />
-          <ScalarProperty Name="Id_Cliente" ColumnName="Id_Cliente" />
-          <ScalarProperty Name="Nombre_Cliente" ColumnName="Nombre_Cliente" />
-          <ScalarProperty Name="Direccion_Cliente" ColumnName="Direccion_Cliente" />
-          <ScalarProperty Name="Telefono_Cliente" ColumnName="Telefono_Cliente" />
           <ScalarProperty Name="Correo_Cliente" ColumnName="Correo_Cliente" />
+          <ScalarProperty Name="Telefono_Cliente" ColumnName="Telefono_Cliente" />
+          <ScalarProperty Name="Direccion_Cliente" ColumnName="Direccion_Cliente" />
+          <ScalarProperty Name="Nombre_Cliente" ColumnName="Nombre_Cliente" />
+          <ScalarProperty Name="Id_Cliente" ColumnName="Id_Cliente" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -17,42 +17,42 @@
       <EntityTypeMapping TypeName="SytrenxModel.Pedido">
         <MappingFragment StoreEntitySet="Pedido">
           <ScalarProperty Name="TotalPrecio_Producto" ColumnName="TotalPrecio_Producto" />
-          <ScalarProperty Name="Cantidad_Producto1" ColumnName="Cantidad_Producto" />
-          <ScalarProperty Name="Id_Pedido" ColumnName="Id_Pedido" />
-          <ScalarProperty Name="Id_cliente" ColumnName="Id_cliente" />
-          <ScalarProperty Name="Fecha_Pedido" ColumnName="Fecha_Pedido" />
-          <ScalarProperty Name="Id_Producto" ColumnName="Id_Producto" />
+          <ScalarProperty Name="Cantidad_Producto" ColumnName="Cantidad_Producto" />
           <ScalarProperty Name="Id_Vendedor" ColumnName="Id_Vendedor" />
+          <ScalarProperty Name="Id_Producto" ColumnName="Id_Producto" />
+          <ScalarProperty Name="Fecha_Pedido" ColumnName="Fecha_Pedido" />
+          <ScalarProperty Name="Id_cliente" ColumnName="Id_cliente" />
+          <ScalarProperty Name="Id_Pedido" ColumnName="Id_Pedido" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Productos">
       <EntityTypeMapping TypeName="SytrenxModel.Productos">
         <MappingFragment StoreEntitySet="Productos">
-          <ScalarProperty Name="Tipo_Producto1" ColumnName="Tipo_Producto" />
-          <ScalarProperty Name="Id_Producto" ColumnName="Id_Producto" />
-          <ScalarProperty Name="Id_Tipo" ColumnName="Id_Tipo" />
+          <ScalarProperty Name="Imagen_Producto" ColumnName="Imagen_Producto" />
+          <ScalarProperty Name="Descripcion_Producto" ColumnName="Descripcion_Producto" />
           <ScalarProperty Name="Nombre_Producto" ColumnName="Nombre_Producto" />
-          <ScalarProperty Name="Clave_Producto" ColumnName="Clave_Producto" />
-          <ScalarProperty Name="Existencia_Producto" ColumnName="Existencia_Producto" />
+          <ScalarProperty Name="Id_Producto" ColumnName="Id_Producto" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tipo_Producto">
       <EntityTypeMapping TypeName="SytrenxModel.Tipo_Producto">
         <MappingFragment StoreEntitySet="Tipo_Producto">
-          <ScalarProperty Name="Id_Tipo" ColumnName="Id_Tipo" />
+          <ScalarProperty Name="Precio_Tipo_Producto" ColumnName="Precio_Tipo_Producto" />
+          <ScalarProperty Name="Id_Producto" ColumnName="Id_Producto" />
           <ScalarProperty Name="Tipo_Producto1" ColumnName="Tipo_Producto" />
+          <ScalarProperty Name="Id_Tipo" ColumnName="Id_Tipo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Vendedor">
       <EntityTypeMapping TypeName="SytrenxModel.Vendedor">
         <MappingFragment StoreEntitySet="Vendedor">
-          <ScalarProperty Name="Id_Vendedor" ColumnName="Id_Vendedor" />
-          <ScalarProperty Name="Nombre_Vendedor" ColumnName="Nombre_Vendedor" />
-          <ScalarProperty Name="Telefono_Vendedor" ColumnName="Telefono_Vendedor" />
           <ScalarProperty Name="Correo_Vendedor" ColumnName="Correo_Vendedor" />
+          <ScalarProperty Name="Telefono_Vendedor" ColumnName="Telefono_Vendedor" />
+          <ScalarProperty Name="Nombre_Vendedor" ColumnName="Nombre_Vendedor" />
+          <ScalarProperty Name="Id_Vendedor" ColumnName="Id_Vendedor" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

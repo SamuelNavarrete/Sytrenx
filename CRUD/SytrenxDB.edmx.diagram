@@ -5,15 +5,12 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="ccf70e4b8a174076891d9587e7724b4f" Name="Diagram1" ZoomLevel="64">
-        <EntityTypeShape EntityType="SytrenxModel.Cliente" Width="1.5" PointX="7" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SytrenxModel.Pedido" Width="1.5" PointX="4.875" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SytrenxModel.Productos" Width="1.5" PointX="2.75" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SytrenxModel.Tipo_Producto" Width="1.5" PointX="0.5" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="SytrenxModel.Vendedor" Width="1.5" PointX="3.625" PointY="5.125" IsExpanded="true" />
-        <AssociationConnector Association="SytrenxModel.FK_Pedido_Cliente" ManuallyRouted="false" />
-        <AssociationConnector Association="SytrenxModel.FK_Pedido_Productos" ManuallyRouted="false" />
-        <AssociationConnector ManuallyRouted="false" Association="SytrenxModel.FK_Pedido_Vendedor" />
-        <AssociationConnector Association="SytrenxModel.FK_Productos_Tipo_Producto" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SytrenxModel.Cliente" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SytrenxModel.Pedido" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SytrenxModel.Productos" Width="1.5" PointX="0.75" PointY="0.875" />
+        <EntityTypeShape EntityType="SytrenxModel.Tipo_Producto" Width="1.5" PointX="3" PointY="0.875" />
+        <EntityTypeShape EntityType="SytrenxModel.Vendedor" Width="1.5" PointX="4.75" PointY="3.75" />
+        <AssociationConnector Association="SytrenxModel.FK_TipoProducto_Producto" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

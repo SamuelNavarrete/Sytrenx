@@ -1,16 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="SytrenxModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SytrenxEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cliente" EntityType="SytrenxModel.Cliente" />
+    <EntitySet Name="Pedido" EntityType="SytrenxModel.Pedido" />
+    <EntitySet Name="Productos" EntityType="SytrenxModel.Productos" />
+    <EntitySet Name="Tipo_Producto" EntityType="SytrenxModel.Tipo_Producto" />
+    <EntitySet Name="Vendedor" EntityType="SytrenxModel.Vendedor" />
+    <AssociationSet Name="FK_TipoProducto_Producto" Association="SytrenxModel.FK_TipoProducto_Producto">
+      <End Role="Productos" EntitySet="Productos" />
+      <End Role="Tipo_Producto" EntitySet="Tipo_Producto" />
+    </AssociationSet>
+  </EntityContainer>
   <EntityType Name="Cliente">
     <Key>
       <PropertyRef Name="Id_Cliente" />
     </Key>
     <Property Name="Id_Cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nombre_Cliente" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Direccion_Cliente" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Telefono_Cliente" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Correo_Cliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Pedido" Relationship="Self.FK_Pedido_Cliente" FromRole="Cliente" ToRole="Pedido" />
-    <Property Name="Contraseña_Cliente" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nombre_Cliente" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Direccion_Cliente" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono_Cliente" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Correo_Cliente" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Contraseña_Cliente" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Pedido">
     <Key>
@@ -21,10 +31,7 @@
     <Property Name="Fecha_Pedido" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Id_Producto" Type="Int32" Nullable="false" />
     <Property Name="Id_Vendedor" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Cliente" Relationship="Self.FK_Pedido_Cliente" FromRole="Pedido" ToRole="Cliente" />
-    <NavigationProperty Name="Productos" Relationship="Self.FK_Pedido_Productos" FromRole="Pedido" ToRole="Productos" />
-    <NavigationProperty Name="Vendedor" Relationship="Self.FK_Pedido_Vendedor" FromRole="Pedido" ToRole="Vendedor" />
-    <Property Name="Cantidad_Producto1" Type="Int32" Nullable="false" />
+    <Property Name="Cantidad_Producto" Type="Int32" Nullable="false" />
     <Property Name="TotalPrecio_Producto" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Productos">
@@ -32,101 +39,40 @@
       <PropertyRef Name="Id_Producto" />
     </Key>
     <Property Name="Id_Producto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Id_Tipo" Type="Int32" Nullable="false" />
-    <Property Name="Nombre_Producto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Clave_Producto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Existencia_Producto" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Pedido" Relationship="Self.FK_Pedido_Productos" FromRole="Productos" ToRole="Pedido" />
-    <NavigationProperty Name="Tipo_Producto" Relationship="Self.FK_Productos_Tipo_Producto" FromRole="Productos" ToRole="Tipo_Producto" />
-    <Property Name="Tipo_Producto1" Type="Int32" Nullable="false" />
+    <Property Name="Nombre_Producto" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Descripcion_Producto" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Imagen_Producto" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Tipo_Producto" Relationship="SytrenxModel.FK_TipoProducto_Producto" FromRole="Productos" ToRole="Tipo_Producto" />
   </EntityType>
   <EntityType Name="Tipo_Producto">
     <Key>
       <PropertyRef Name="Id_Tipo" />
     </Key>
     <Property Name="Id_Tipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Tipo_Producto1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Productos" Relationship="Self.FK_Productos_Tipo_Producto" FromRole="Tipo_Producto" ToRole="Productos" />
+    <Property Name="Tipo_Producto1" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Id_Producto" Type="Int32" Nullable="false" />
+    <Property Name="Precio_Tipo_Producto" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Productos" Relationship="SytrenxModel.FK_TipoProducto_Producto" FromRole="Tipo_Producto" ToRole="Productos" />
   </EntityType>
   <EntityType Name="Vendedor">
     <Key>
       <PropertyRef Name="Id_Vendedor" />
     </Key>
     <Property Name="Id_Vendedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nombre_Vendedor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Telefono_Vendedor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Correo_Vendedor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Pedido" Relationship="Self.FK_Pedido_Vendedor" FromRole="Vendedor" ToRole="Pedido" />
+    <Property Name="Nombre_Vendedor" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono_Vendedor" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Correo_Vendedor" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
-  <Association Name="FK_Pedido_Cliente">
-    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
-    <End Role="Pedido" Type="Self.Pedido" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Cliente">
-        <PropertyRef Name="Id_Cliente" />
-      </Principal>
-      <Dependent Role="Pedido">
-        <PropertyRef Name="Id_cliente" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Pedido_Productos">
-    <End Role="Productos" Type="Self.Productos" Multiplicity="1" />
-    <End Role="Pedido" Type="Self.Pedido" Multiplicity="*" />
+  <Association Name="FK_TipoProducto_Producto">
+    <End Type="SytrenxModel.Productos" Role="Productos" Multiplicity="1" />
+    <End Type="SytrenxModel.Tipo_Producto" Role="Tipo_Producto" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Productos">
         <PropertyRef Name="Id_Producto" />
       </Principal>
-      <Dependent Role="Pedido">
+      <Dependent Role="Tipo_Producto">
         <PropertyRef Name="Id_Producto" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Pedido_Vendedor">
-    <End Type="Self.Vendedor" Multiplicity="1" Role="Vendedor" />
-    <End Type="Self.Pedido" Multiplicity="*" Role="Pedido" />
-    <ReferentialConstraint>
-      <Principal Role="Vendedor">
-        <PropertyRef Name="Id_Vendedor" />
-      </Principal>
-      <Dependent Role="Pedido">
-        <PropertyRef Name="Id_Vendedor" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Productos_Tipo_Producto">
-    <End Role="Tipo_Producto" Type="Self.Tipo_Producto" Multiplicity="1" />
-    <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Tipo_Producto">
-        <PropertyRef Name="Id_Tipo" />
-      </Principal>
-      <Dependent Role="Productos">
-        <PropertyRef Name="Id_Tipo" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityContainer Name="SytrenxEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Cliente" EntityType="Self.Cliente" />
-    <EntitySet Name="Pedido" EntityType="Self.Pedido" />
-    <EntitySet Name="Productos" EntityType="Self.Productos" />
-    <EntitySet Name="Tipo_Producto" EntityType="Self.Tipo_Producto" />
-    <EntitySet Name="Vendedor" EntityType="Self.Vendedor" />
-    <AssociationSet Name="FK_Pedido_Cliente" Association="Self.FK_Pedido_Cliente">
-      <End Role="Cliente" EntitySet="Cliente" />
-      <End Role="Pedido" EntitySet="Pedido" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Pedido_Productos" Association="Self.FK_Pedido_Productos">
-      <End Role="Productos" EntitySet="Productos" />
-      <End Role="Pedido" EntitySet="Pedido" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Pedido_Vendedor" Association="Self.FK_Pedido_Vendedor">
-      <End EntitySet="Vendedor" Role="Vendedor" />
-      <End EntitySet="Pedido" Role="Pedido" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Productos_Tipo_Producto" Association="Self.FK_Productos_Tipo_Producto">
-      <End Role="Tipo_Producto" EntitySet="Tipo_Producto" />
-      <End Role="Productos" EntitySet="Productos" />
-    </AssociationSet>
-  </EntityContainer>
 </Schema>

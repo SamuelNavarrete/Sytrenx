@@ -17,18 +17,15 @@ namespace CRUD
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Productos()
         {
-            this.Pedido = new HashSet<Pedido>();
+            this.Tipo_Producto = new HashSet<Tipo_Producto>();
         }
     
         public int Id_Producto { get; set; }
-        public int Id_Tipo { get; set; }
         public string Nombre_Producto { get; set; }
-        public string Clave_Producto { get; set; }
-        public int Existencia_Producto { get; set; }
-        public int Tipo_Producto1 { get; set; }
+        public string Descripcion_Producto { get; set; }
+        public string Imagen_Producto { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Pedido> Pedido { get; set; }
-        public virtual Tipo_Producto Tipo_Producto { get; set; }
+        public virtual ICollection<Tipo_Producto> Tipo_Producto { get; set; }
     }
 }

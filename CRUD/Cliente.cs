@@ -14,20 +14,11 @@ namespace CRUD
     
     public partial class Cliente
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Cliente()
-        {
-            this.Pedido = new HashSet<Pedido>();
-        }
-    
         public int Id_Cliente { get; set; }
         public string Nombre_Cliente { get; set; }
         public string Direccion_Cliente { get; set; }
         public string Telefono_Cliente { get; set; }
         public string Correo_Cliente { get; set; }
         public string Contraseña_Cliente { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Pedido> Pedido { get; set; }
     }
 }

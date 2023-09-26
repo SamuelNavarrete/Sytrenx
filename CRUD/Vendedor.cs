@@ -14,18 +14,9 @@ namespace CRUD
     
     public partial class Vendedor
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Vendedor()
-        {
-            this.Pedido = new HashSet<Pedido>();
-        }
-    
         public int Id_Vendedor { get; set; }
         public string Nombre_Vendedor { get; set; }
         public string Telefono_Vendedor { get; set; }
         public string Correo_Vendedor { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Pedido> Pedido { get; set; }
     }
 }

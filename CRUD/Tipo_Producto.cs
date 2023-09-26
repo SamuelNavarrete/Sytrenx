@@ -14,16 +14,11 @@ namespace CRUD
     
     public partial class Tipo_Producto
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Tipo_Producto()
-        {
-            this.Productos = new HashSet<Productos>();
-        }
-    
         public int Id_Tipo { get; set; }
         public string Tipo_Producto1 { get; set; }
+        public int Id_Producto { get; set; }
+        public int Precio_Tipo_Producto { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Productos> Productos { get; set; }
+        public virtual Productos Productos { get; set; }
     }
 }
