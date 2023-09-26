@@ -13,6 +13,49 @@
     <title>Sytrenx</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <script>
+        // Obtener parámetros de la URL
+        const params = new URLSearchParams(window.location.search);
+        const productId = params.get('id');
+        const image = params.get('image');
+
+        // Datos de productos (puedes cargar esto desde el servidor)
+        const products = [
+            {
+                id: 1,
+                name: 'Azufre Liquido',
+                description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
+                imageUrl: '../../Resoruce/Assets/aliquido.jpg'
+            },
+            {
+                id: 2,
+                name: 'Azufre Sólido',
+                description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
+                imageUrl: '../../Resoruce/Assets/amolienda.jpg'
+            },
+            // Agrega más productos aquí
+        ];
+
+        // Función para cargar los detalles del producto
+        function loadProductDetails() {
+            const product = products.find(p => p.id === parseInt(productId));
+
+            if (product) {
+                // Actualizar elementos HTML con los datos del producto
+                document.getElementById('product-name').textContent = product.name;
+                document.getElementById('product-description').textContent = product.description;
+                document.getElementById('product-image').src = image; // Usar la URL de la imagen pasada como parámetro
+            } else {
+                // Manejar el caso en el que no se encuentre el producto
+                alert('Producto no encontrado.');
+            }
+        }
+
+        // Cargar los detalles del producto al cargar la página
+        window.addEventListener("load", loadProductDetails);
+    </script>
+
 </head>
 
 <body>
@@ -89,86 +132,93 @@
         <br>
         <br>
         <br>
-       <div class="container">
-        <div class="row">
-            <div class="col-md">
-                <nav class="navbar navbar-dark bg-dark fixed-top">
-                    <!-- ... (código de navegación) ... -->
-                </nav>
-            </div>
-        </div>
-        <!-- ... (código de encabezado) ... -->
-        <br>
-        <br>
-        <br>
-        <div class="row">
-            <div class="col-md">
-                <center>
-                    <img src="../../Resoruce/Assets/Logo.jpg" alt="Logo" width="200"
-                        height="200">
-                </center>
-            </div>
-        </div>
-        <br>
-        <br>
-        <br>
-        <div class="row">
-            <div class="col-md">
-                <!-- Agrega un contenedor para mostrar los detalles del producto -->
-                <div id="product-details" class="card mb-3" style="max-width: 1000px;">
-                    <!-- Los detalles del producto se cargarán dinámicamente aquí -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md">
+                    <nav class="navbar navbar-dark bg-dark fixed-top">
+                        <!-- ... (código de navegación) ... -->
+                    </nav>
                 </div>
             </div>
-        </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class="row" style="background-color: rgba(128, 128, 128, 0.178);">
-            <div class="col-md-4">
-                <footer>
-                    <address>
-                        Conocenos<br>
-                    </address>
-                    <ul>
-                        <li><a href="/">Correo</a></li>
-                        <li><a href="/food">Direccion</a></li>
-                        <li><a href="/drinks">Ubicacion</a></li>
-                    </ul>
-                </footer>
+            <!-- ... (código de encabezado) ... -->
+            <br>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-md">
+                    <center>
+                        <img src="../../Resoruce/Assets/Logo.jpg" alt="Logo" width="200"
+                            height="200">
+                    </center>
+                </div>
             </div>
-            <div class="col-md-2">
-                <br>
-                <center>
-                    <img src="../../Resoruce/Assets/doc.jpg" alt="Logo" width="50"
-                        height="50">
-            </div>
-            <div class="col-md-2">
-                <br>
-                <center>
-                    <img src="../../Resoruce/Assets/doc.jpg" alt="Logo" width="50"
-                        height="50">
-            </div>
-            <div class="col-md-2">
-                <br>
-                <center>
-                    <img src="../../Resoruce/Assets/doc.jpg" alt="Logo" width="50"
-                        height="50">
+            <br>
+            <br>
+            <br>
+            <!-- Contenedor para mostrar los detalles del producto -->
+
+            <div id="product-details" class="card mb-3" style="max-width: 1000px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img id="product-image" src="" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 id="product-name" class="card-title"><%# Product.Name %></h5>
+                            <p id="product-description" class="card-text"><%# Product.Description %></p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-        </div>
-    </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="row" style="background-color: rgba(128, 128, 128, 0.178);">
+                <div class="col-md-4">
+                    <footer>
+                        <address>
+                            Conocenos<br>
+                        </address>
+                        <ul>
+                            <li><a href="/">Correo</a></li>
+                            <li><a href="/food">Direccion</a></li>
+                            <li><a href="/drinks">Ubicacion</a></li>
+                        </ul>
+                    </footer>
+                </div>
+                <div class="col-md-2">
+                    <br>
+                    <center>
+                        <img src="../../Resoruce/Assets/doc.jpg" alt="Logo" width="50"
+                            height="50">
+                </div>
+                <div class="col-md-2">
+                    <br>
+                    <center>
+                        <img src="../../Resoruce/Assets/doc.jpg" alt="Logo" width="50"
+                            height="50">
+                </div>
+                <div class="col-md-2">
+                    <br>
+                    <center>
+                        <img src="../../Resoruce/Assets/doc.jpg" alt="Logo" width="50"
+                            height="50">
+                </div>
 
+            </div>
+        </div>
 </body>
 
 </html>

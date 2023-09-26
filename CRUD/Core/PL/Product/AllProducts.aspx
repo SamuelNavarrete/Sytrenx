@@ -97,32 +97,33 @@
             </div>
         </div>
         <br>
-       
-          <!-- Agrega un contenedor para mostrar las tarjetas de productos -->
+
+        <!-- Agrega un contenedor para mostrar las tarjetas de productos -->
         <div class="row" id="product-container">
             <!-- Las tarjetas de productos se cargarán dinámicamente aquí -->
-            <% foreach (var product in products) { %>
-                <div class="col-md-4">
-                    <div class="card mb-3" style="max-width: 1000px;">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="<%= product.ImageUrl %>" class="img-fluid rounded-start" alt="...">
+            <% foreach (var product in products)
+                { %>
+            <div class="col-md-4">
+                <div class="card mb-3" style="max-width: 1000px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="<%= product.ImageUrl %>" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= product.Name %></h5>
+                                <p class="card-text"><%= product.Description %></p>
                             </div>
-                            <div class="col-md-4">
-                                <div class="card-body">
-                                    <h5 class="card-title"><%= product.Name %></h5>
-                                    <p class="card-text"><%= product.Description %></p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card-body">
-                                    <!-- Agrega un enlace con los datos del producto como parámetros de consulta -->
-                                    <a href="DescriptionProduct.aspx?id=<%= product.Id %>" class="btn btn-primary btn-sm">Ver Detalles</a>
-                                </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card-body">
+                                <!-- Agrega un enlace con los datos del producto como parámetros de consulta -->
+                                <a href="DescriptionProduct.aspx?id=<%= product.Id %>&image=<%= product.ImageUrl %>" class="btn btn-primary btn-sm">Ver Detalles</a>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
             <% } %>
         </div>
         <br>
@@ -135,55 +136,27 @@
 
     <!-- Agrega el código JavaScript necesario para cargar las tarjetas dinámicamente -->
     <script>
-        // Datos de productos (puedes cargar esto desde el servidor)
-        const products = [
-            {
-                id: 1,
-                name: 'Azufre Liquido',
-                description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
-                imageUrl: '../../Resoruce/Assets/aliquido.jpg'
-            },
-            {
-                id: 2,
-                name: 'Azufre Sólido',
-                description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
-                imageUrl: '../../Resoruce/Assets/amolienda.jpg'
-            },
-            {
-                id: 3,
-                name: 'Azufre Sólido',
-                description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
-                imageUrl: '../../Resoruce/Assets/amolienda.jpg'
-            },
-            {
-                id: 4,
-                name: 'Producto 4',
-                description: 'Description for Product 4.',
-                imageUrl: '../../Resoruce/Assets/producto4.jpg'
-            }
-        ];
-
         // Función para cargar las tarjetas de productos
         function loadProducts() {
             const productContainer = document.getElementById('product-container');
 
-            products.forEach(product => {
+            Core.Model.Product.Product.ProductsList.forEach(product => {
                 const cardHtml = `
                     <div class="col-md-4">
                         <div class="card mb-3" style="max-width: 1000px;">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="${product.imageUrl}" class="img-fluid rounded-start" alt="...">
+                                    <img src="${product.ImageUrl}" class="img-fluid rounded-start" alt="...">
                                 </div>
                                 <div class="col-md-4">
                                     <div class="card-body">
-                                        <h5 class="card-title">${product.name}</h5>
-                                        <p class="card-text">${product.description}</p>
+                                        <h5 class="card-title">${product.Name}</h5>
+                                        <p class="card-text">${product.Description}</p>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="card-body">
-                                        <a href="DescriptionProduct.aspx?id=${product.id}" class="btn btn-primary btn-sm">Ver Detalles</a>
+                                        <a href="DescriptionProduct.aspx?id=${product.Id}" class="btn btn-primary btn-sm">Ver Detalles</a>
                                     </div>
                                 </div>
                             </div>
@@ -199,37 +172,39 @@
         window.addEventListener("load", loadProducts);
     </script>
 
-        <br>
-        <div class="row" style="background-color: rgba(128, 128, 128, 0.178);">
-            <div class="col-md-4">
-                <footer>
-                    <address>
-                        Conocenos<br>
-                    </address>
-                    <ul>
-                        <li><a href="/">Correo</a></li>
-                        <li><a href="/food">Direccion</a></li>
-                        <li><a href="/drinks">Ubicacion</a></li>
-                    </ul>
-                </footer>
-            </div>
-            <div class="col-md-2">
-                <br>
-                <center>
-                    <img src="../../Resoruce/Assets/doc.jpg" alt="Logo" width="50" height="50" />
-            </div>
-            <div class="col-md-2">
-                <br>
-                <center>
-                    <img src="../../Resoruce/Assets/doc.jpg" alt="Logo" width="50" height="50" />
-            </div>
-            <div class="col-md-2">
-                <br>
-                <center>
-                    <img src="../../Resoruce/Assets/doc.jpg" alt="Logo" width="50" height="50" />
-            </div>
-
+    <br>
+    <div class="row" style="background-color: rgba(128, 128, 128, 0.178);">
+        <div class="col-md-4">
+            <footer>
+                <address>
+                    Conocenos<br>
+                </address>
+                <ul>
+                    <li><a href="/">Correo</a></li>
+                    <li><a href="/food">Direccion</a></li>
+                    <li><a href="/drinks">Ubicacion</a></li>
+                </ul>
+            </footer>
         </div>
+        <div class="col-md-2">
+            <br>
+            <center>
+                <img src="../../Resoruce/Assets/doc.jpg" alt="Logo" width="50" height="50" />
+            </center>
+        </div>
+        <div class="col-md-2">
+            <br>
+            <center>
+                <img src="../../Resoruce/Assets/doc.jpg" alt="Logo" width="50" height="50" />
+            </center>
+        </div>
+        <div class="col-md-2">
+            <br>
+            <center>
+                <img src="../../Resoruce/Assets/doc.jpg" alt="Logo" width="50" height="50" />
+            </center>
+        </div>
+    </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

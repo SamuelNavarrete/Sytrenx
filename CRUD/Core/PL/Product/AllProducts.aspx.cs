@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.Xml.Linq;
 
 namespace CRUD.Core.PL.Product
 {
@@ -13,6 +10,7 @@ namespace CRUD.Core.PL.Product
         {
             new Core.Model.Product.Product { Id = 1, Name = "Azufre Liquido", Description = "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.", ImageUrl = "../../Resoruce/Assets/aliquido.jpg" },
             new Core.Model.Product.Product { Id = 2, Name = "Azufre Sólido", Description = "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.", ImageUrl = "../../Resoruce/Assets/amolienda.jpg" },
+            new Core.Model.Product.Product { Id = 3, Name = "Azufre Sólido", Description = "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.", ImageUrl = "../../Resoruce/Assets/amolienda.jpg" },
             // Agrega más productos aquí
         };
 
@@ -22,4 +20,3 @@ namespace CRUD.Core.PL.Product
         }
     }
 }
-
