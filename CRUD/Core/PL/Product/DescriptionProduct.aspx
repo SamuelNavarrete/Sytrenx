@@ -50,8 +50,12 @@
             border: 2px solid lightgray; /* Color del borde gris claro */
             background-color: white; /* Color de fondo blanco */
             padding: 20px;
-            width: 400px;/* Espacio interno para el contenido de la card */
-            height: 200px;/* Espacio interno para el contenido de la card */
+            width: 400px; /* Espacio interno para el contenido de la card */
+            height: 200px; /* Espacio interno para el contenido de la card */
+            margin: 10px auto; /* Espacio vertical y centrado entre las cards */
+
+            /* Agregar sombra en los bordes leading, trailing y bottom */
+            box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
         }
     </style>
 
@@ -194,18 +198,6 @@
             });
         </script>
 
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
         <br>
         <br>
         <div class="row" style="background-color: rgba(128, 128, 128, 0.178);">
