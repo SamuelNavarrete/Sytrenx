@@ -130,10 +130,57 @@
                 <div class="col-md-8">
                     <h2><%= Product.Name %></h2>
                     <p><%= Product.Description %></p>
+
+                    <!-- Información adicional -->
+                    <div class="row">
+                        <!-- Contenedor izquierdo para el tipo de producto -->
+                        <div class="col-md-6">
+                            <h3>Tipo de Producto</h3>
+                            <select id="product-type-dropdown">
+                                <option value="Tipo 1">Tipo 1</option>
+                                <option value="Tipo 2">Tipo 2</option>
+                                <option value="Tipo 3">Tipo 3</option>
+                                <!-- Agrega más opciones según sea necesario -->
+                            </select>
+                        </div>
+
+                        <!-- Contenedor derecho para la compra -->
+                        <div class="col-md-6">
+                            <h3>Comprar</h3>
+                            <p>Cantidad: <span id="product-quantity">0</span></p>
+                            <button id="increment-btn" class="btn btn-primary">+</button>
+                            <button id="decrement-btn" class="btn btn-primary">-</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
+        <script>
+            // JavaScript para manejar la cantidad de productos
+            var quantity = 0;
+            var quantitySpan = document.getElementById('product-quantity');
+
+            document.getElementById('increment-btn').addEventListener('click', function () {
+                quantity++;
+                quantitySpan.textContent = quantity;
+            });
+
+            document.getElementById('decrement-btn').addEventListener('click', function () {
+                if (quantity > 0) {
+                    quantity--;
+                    quantitySpan.textContent = quantity;
+                }
+            });
+
+            // JavaScript para manejar la selección del tipo de producto
+            var typeDropdown = document.getElementById('product-type-dropdown');
+
+            typeDropdown.addEventListener('change', function () {
+                var selectedType = typeDropdown.value;
+                // Aquí puedes realizar acciones adicionales según el tipo seleccionado.
+            });
+        </script>
 
         <br>
         <br>
