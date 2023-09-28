@@ -116,19 +116,24 @@
 
         <!-- Contenedor para mostrar los detalles del producto -->
 
-        <div id="product-details" class="card mb-3" style="max-width: 1000px;">
-            <div class="row g-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Detalles del Producto</h1>
+                    <hr />
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-md-4">
-                    <img id="product-image" src="" class="img-fluid rounded-start" alt="...">
+                    <img src="<%= Product.ImageUrl %>" alt="Producto" class="img-fluid" />
                 </div>
                 <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 id="product-name" class="card-title"></h5>
-                        <p id="product-description" class="card-text"></p>
-                    </div>
+                    <h2><%= Product.Name %></h2>
+                    <p><%= Product.Description %></p>
                 </div>
             </div>
         </div>
+
 
         <br>
         <br>

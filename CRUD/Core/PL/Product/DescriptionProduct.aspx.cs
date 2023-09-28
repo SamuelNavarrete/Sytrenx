@@ -14,9 +14,8 @@ namespace CRUD.Core.PL.Product
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Obtener los parámetros de la URL
+            // Obtener el ID del producto de la URL
             string productId = Request.QueryString["id"];
-            string imageUrl = Request.QueryString["image"];
 
             // Verificar si se proporcionó un ID de producto
             if (!string.IsNullOrEmpty(productId))
@@ -25,18 +24,41 @@ namespace CRUD.Core.PL.Product
                 int productIdInt;
                 if (int.TryParse(productId, out productIdInt))
                 {
-                    // Aquí debes configurar los datos del producto, 
-                    // ya sea cargándolos desde una base de datos o como desees.
-                    // En este ejemplo, se crea un producto de ejemplo:
-                    Product = new Core.Model.Product.Product
+                    using (SytrenxEntities DBF = new SytrenxEntities())
                     {
-                        Id = productIdInt,
-                        Name = "Producto de Ejemplo",
-                        Description = "Esta es una descripción de ejemplo.",
-                        ImageUrl = imageUrl
-                    };
+                        // Consultar la base de datos para obtener el producto por su ID
+                        var selectedProduct = DBF.Productos.FirstOrDefault(p => p.Id_Producto == productIdInt);
+
+                        if (selectedProduct != null)
+                        {
+                            // Asignar los datos del producto a la propiedad Product
+                            Product = new Core.Model.Product.Product
+                            {
+                                Id = selectedProduct.Id_Producto,
+                                Name = selectedProduct.Nombre_Producto,
+                                Description = selectedProduct.Descripcion_Producto,
+                                ImageUrl = selectedProduct.Imagen_Producto
+                            };
+                        }
+                        else
+                        {
+                            // Manejar el caso en el que no se encontró el producto
+                            // Puedes mostrar un mensaje de error o redirigir a una página de error.
+                        }
+                    }
+                }
+                else
+                {
+                    // Manejar el caso en el que el ID de producto no es un número válido
+                    // Puedes mostrar un mensaje de error o redirigir a una página de error.
                 }
             }
+            else
+            {
+                // Manejar el caso en el que no se proporcionó un ID de producto
+                // Puedes mostrar un mensaje de error o redirigir a una página de error.
+            }
         }
+
     }
 }
