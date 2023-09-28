@@ -53,9 +53,34 @@
             width: 400px; /* Espacio interno para el contenido de la card */
             height: 200px; /* Espacio interno para el contenido de la card */
             margin: 10px auto; /* Espacio vertical y centrado entre las cards */
-
             /* Agregar sombra en los bordes leading, trailing y bottom */
             box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
+            /* Estilos para los botones de + y - */
+        }
+
+        /* Estilos para los botones de + y - */
+        .button-container {
+            display: flex;
+            flex-direction: column; /* Mostrar botones en columna (espacio vertical) */
+            justify-content: center; /* Centrar verticalmente los botones */
+            align-items: center; /* Centrar horizontalmente los botones */
+            height: 100%; /* Establecer altura completa del contenedor */
+        }
+
+        /* Estilo para los botones de + y - */
+        .btn {
+            width: 200px; /* Ancho de los botones */
+            height: 30px; /* Alto de los botones */
+            margin: 5px 0; /* Espacio vertical de 5px entre los botones */
+            text-align: center; /* Centrar el texto horizontalmente */
+            line-height: 5px; /* Centrar verticalmente el texto */
+        }
+
+        /* Estilo para el contenedor de Cantidad y Total */
+        .purchase-container {
+            display: flex;
+            justify-content: space-between; /* Distribuir elementos horizontalmente */
+            align-items: center; /* Alinear verticalmente al centro */
         }
     </style>
 
@@ -125,13 +150,8 @@
         </div>
         <br>
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
 
         <!-- Contenedor para mostrar los detalles del producto -->
-
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -163,9 +183,15 @@
                         <!-- Contenedor derecho para la compra -->
                         <div class="card">
                             <h3>Comprar</h3>
-                            <p>Cantidad: <span id="product-quantity">0</span></p>
-                            <button id="increment-btn" class="btn btn-primary">+</button>
-                            <button id="decrement-btn" class="btn btn-primary">-</button>
+                            <div class="purchase-container">
+                                <p>Cantidad: <span id="product-quantity">0</span></p>
+                                <p>Total: $</p>
+                                <!-- Mover este elemento después de Cantidad -->
+                            </div>
+                            <div class="button-container">
+                                <button id="increment-btn" class="btn btn-primary">Agregar</button>
+                                <button id="decrement-btn" class="btn btn-primary">Quitar</button>
+                            </div>
                         </div>
                     </div>
                 </div>
