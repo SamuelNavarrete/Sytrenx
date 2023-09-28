@@ -43,6 +43,18 @@
         window.addEventListener("load", loadProductDetails);
     </script>
 
+    <style>
+        /* Estilos para las cards */
+        .card {
+            border-radius: 40px;
+            border: 2px solid lightgray; /* Color del borde gris claro */
+            background-color: white; /* Color de fondo blanco */
+            padding: 20px;
+            width: 400px;/* Espacio interno para el contenido de la card */
+            height: 200px;/* Espacio interno para el contenido de la card */
+        }
+    </style>
+
 </head>
 
 <body>
@@ -134,7 +146,7 @@
                     <!-- Información adicional -->
                     <div class="row">
                         <!-- Contenedor izquierdo para el tipo de producto -->
-                        <div class="col-md-6">
+                        <div class="card">
                             <h3>Tipo de Producto</h3>
                             <select id="product-type-dropdown">
                                 <option value="Tipo 1">Tipo 1</option>
@@ -145,7 +157,7 @@
                         </div>
 
                         <!-- Contenedor derecho para la compra -->
-                        <div class="col-md-6">
+                        <div class="card">
                             <h3>Comprar</h3>
                             <p>Cantidad: <span id="product-quantity">0</span></p>
                             <button id="increment-btn" class="btn btn-primary">+</button>
