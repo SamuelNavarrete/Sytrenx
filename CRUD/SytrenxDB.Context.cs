@@ -12,6 +12,8 @@ namespace CRUD
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class SytrenxEntities : DbContext
     {
@@ -30,5 +32,10 @@ namespace CRUD
         public virtual DbSet<Productos> Productos { get; set; }
         public virtual DbSet<Tipo_Producto> Tipo_Producto { get; set; }
         public virtual DbSet<Vendedor> Vendedor { get; set; }
+    
+        public virtual ObjectResult<SP_GetAllProductos_Result> SP_GetAllProductos()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_GetAllProductos_Result>("SP_GetAllProductos");
+        }
     }
 }

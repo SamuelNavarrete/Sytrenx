@@ -10,6 +10,7 @@
       <End Role="Productos" EntitySet="Productos" />
       <End Role="Tipo_Producto" EntitySet="Tipo_Producto" />
     </AssociationSet>
+    <FunctionImport Name="SP_GetAllProductos" ReturnType="Collection(SytrenxModel.SP_GetAllProductos_Result)" />
   </EntityContainer>
   <EntityType Name="Cliente">
     <Key>
@@ -75,4 +76,10 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <ComplexType Name="SP_GetAllProductos_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="ImagenUrl" Nullable="false" MaxLength="100" />
+  </ComplexType>
 </Schema>

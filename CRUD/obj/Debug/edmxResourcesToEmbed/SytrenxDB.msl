@@ -56,5 +56,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetAllProductos" FunctionName="SytrenxModel.Store.SP_GetAllProductos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SytrenxModel.SP_GetAllProductos_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="ImagenUrl" ColumnName="ImagenUrl" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>
